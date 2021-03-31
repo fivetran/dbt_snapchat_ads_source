@@ -1,0 +1,51 @@
+version: 2
+
+models:
+  - name: stg_snapchat__ad_account_history
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - ad_account_id
+            - _fivetran_synced
+
+  - name: stg_snapchat__ad_history
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - ad_id
+            - _fivetran_synced
+
+  - name: stg_snapchat__ad_hourly_report
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - ad_id
+            - date_hour
+
+  - name: stg_snapchat__ad_squad_history
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - ad_squad_id
+            - _fivetran_synced
+
+  - name: stg_snapchat__campaign_history
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - campaign_id
+            - _fivetran_synced
+
+  - name: stg_snapchat__creative_history
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - creative_id
+            - _fivetran_synced
+
+  - name: stg_snapchat__creative_url_tag_history
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - creative_id
+            - param_key
