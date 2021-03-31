@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: snapchat_ads
+    schema: "{{ var('snapchat_schema', 'snapchat_ads') }}"
+    database: "{{ var('snapchat_database', target.database) }}"
+    loader: Fivetran
+    loaded_at_field: _fivetran_synced
+
+    tables:
+      - name: ad_account_history
+      - name: ad_history
+      - name: ad_hourly_report
+      - name: ad_squad_history
+      - name: campaign_history
+      - name: creative_history
+      - name: creative_url_tag_history
