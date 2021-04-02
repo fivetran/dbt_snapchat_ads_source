@@ -13,3 +13,10 @@ vars:
     campaign_history: "{{ source('snapchat_ads','campaign_history') }}"
     creative_history: "{{ source('snapchat_ads','creative_history') }}"
     creative_url_tag_history: "{{ source('snapchat_ads','creative_url_tag_history') }}"
+
+models:
+  snapchat_ads_source:
+    +schema: stg_snapchat_ads
+    +materialized: table
+    tmp:
+      +materialized: view
