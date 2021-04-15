@@ -17,6 +17,7 @@ jobs:
           command: |
             python3 -m venv venv
             . venv/bin/activate
+            apt-get install python-dev libsasl2-dev gcc
             pip install --upgrade pip setuptools
             pip install -r integration_tests/requirements.txt
             mkdir -p ~/.dbt
