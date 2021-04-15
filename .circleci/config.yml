@@ -15,7 +15,7 @@ jobs:
       - run:
           name: "Setup dbt"
           command: |
-            apt install libsasl2-dev
+            sudo apt install libsasl2-dev
             python3 -m venv venv
             . venv/bin/activate
             pip install --upgrade pip setuptools
