@@ -13,6 +13,8 @@ vars:
     campaign_history: "{{ source('snapchat_ads','campaign_history') }}"
     creative_history: "{{ source('snapchat_ads','creative_history') }}"
     creative_url_tag_history: "{{ source('snapchat_ads','creative_url_tag_history') }}"
+  dbt_utils_dispatch_list: ['spark_utils', 'fivetran_utils']
+  fivetran_utils_dispatch_list: ['spark_utils']
 
 models:
   snapchat_ads_source:
