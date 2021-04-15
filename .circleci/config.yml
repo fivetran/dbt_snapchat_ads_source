@@ -3,7 +3,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/python:3.7.9-stretch
+      - image: fishtownanalytics/test-container:10
 
     steps:
       - checkout
@@ -17,7 +17,6 @@ jobs:
           command: |
             python3 -m venv venv
             . venv/bin/activate
-            apt-get install python-dev libsasl2-dev gcc
             pip install --upgrade pip setuptools
             pip install -r integration_tests/requirements.txt
             mkdir -p ~/.dbt
