@@ -29,7 +29,8 @@ vars:
 ```
 
 ### Changing the Build Schema
-By default this package will build the Snapchat Ads staging models within a schema titled (<target_schema> + `_stg_snapchat_ads`) in your target database. If this is not where you would like your Snapchat Ads staging data to be written to, add the following configuration to your `dbt_project.yml` file:
+
+By default, this package will build the Snapchat Ads staging models within a schema titled (`<target_schema>` + `_stg_snapchat_ads`) in your target database. If this is not where you would like your Snapchat Ads staging data to be written to, add the following configuration to your `dbt_project.yml` file:
 
 ```yml
 # dbt_project.yml
@@ -41,14 +42,16 @@ models:
 ```
 
 ## Contributions
-Don't see a model or specific metric you would have liked to be included? Notice any bugs when installing 
-and running the package? If so, we highly encourage and welcome contributions to this package! 
+
+Don't see a model or specific metric you would have liked to be included? Notice any bugs when installing and running the package? If so, we highly encourage and welcome contributions to this package! 
 Please create issues or open PRs against `master`. See [the Discourse post](https://discourse.getdbt.com/t/contributing-to-a-dbt-package/657) for information on how to contribute to a package.
 
 ## Database Support
-This package has been tested on BigQuery, Snowflake, Redshift and Databricks.
+
+This package has been tested on BigQuery, Snowflake, Redshift, and Databricks.
 
 ## Resources:
+
 - Provide [feedback](https://www.surveymonkey.com/r/DQ7K7WW) on our existing dbt packages or what you'd like to see next
 - Have questions, feedback, or need help? Book a time during our office hours [using Calendly](https://calendly.com/fivetran-solutions-team/fivetran-solutions-team-office-hours) or email us at solutions@fivetran.com
 - Find all of Fivetran's pre-built dbt packages in our [dbt hub](https://hub.getdbt.com/fivetran/)
