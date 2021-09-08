@@ -25,7 +25,7 @@ final as (
         ad_id,
         date as date_hour,
         impressions,
-        round(spend / 1000000.0,2) as spend,
+        (spend / 1000000.0) as spend,
         swipes
     from fields
 )
