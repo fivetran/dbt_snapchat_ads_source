@@ -124,12 +124,13 @@ models:
           combination_of_columns:
             - creative_id
             - param_key
+            - updated_at
     columns:
-      - name: _fivetran_synced
-        description: "{{ doc('_fivetran_synced') }}"
       - name: creative_id
         description: The ID of the related creative in Snapchat.
       - name: param_key
         description: The URL parameter key, i.e. UTM_SOURCE.
       - name: param_value
         description: The URL parameter value, i.e. Snapchat.
+      - name: updated_at
+        description: Timestamp of when the record was updated.
