@@ -24,6 +24,10 @@ final as (
     select 
         id as ad_account_id,
         name as ad_account_name,
+        advertiser, 
+        currency,
+        status,
+        timezone,
         _fivetran_synced
     from fields
 ),
