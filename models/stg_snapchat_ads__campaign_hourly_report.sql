@@ -20,28 +20,25 @@ fields as (
 final as (
     
     select 
-        _fivetran_synced,
-        android_installs,
+        campaign_id,
+        cast (date as {{ dbt_utils.type_timestamp() }}) as date_hour,
         attachment_quartile_1,
         attachment_quartile_2,
         attachment_quartile_3,
-        attachment_total_view_time_millis,
+        (attachment_total_view_time_millis / 1000000.0) as attachment_total_view_time,
         attachment_view_completion,
-        campaign_id,
-        cast (date as {{ dbt_utils.type_timestamp() }}) as date_hour,
-        impressions,
         quartile_1,
         quartile_2,
         quartile_3,
         saves,
-        screen_time_millis,
         shares,
-        spend,
-        swipes,
-        total_installs,
+        (screen_time_millis / 1000000.0) as screen_time,
         video_views,
         view_completion,
-        view_time_millis
+        (view_time_millis / 1000000.0) as view_time,
+        impressions,
+        (spend / 1000000.0) as spend,
+        swipes
     from fields
 )
 

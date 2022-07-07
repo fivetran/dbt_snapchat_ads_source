@@ -24,10 +24,9 @@ final as (
     select 
         id as ad_account_id,
         name as ad_account_name,
+        cast (created_at as {{ dbt_utils.type_timestamp() }}) as created_at,
         advertiser, 
         currency,
-        status,
-        timezone,
         _fivetran_synced
     from fields
 ),

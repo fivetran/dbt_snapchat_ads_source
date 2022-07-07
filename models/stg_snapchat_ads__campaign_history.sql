@@ -24,6 +24,7 @@ final as (
     select 
         id as campaign_id,
         ad_account_id,
+        cast (created_at as {{ dbt_utils.type_timestamp() }}) as created_at,
         name as campaign_name,
         cast (_fivetran_synced as {{ dbt_utils.type_timestamp() }}) as _fivetran_synced
     from fields

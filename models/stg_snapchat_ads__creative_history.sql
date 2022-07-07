@@ -23,6 +23,7 @@ final as (
     
     select 
         id as creative_id,
+        cast (created_at as {{ dbt_utils.type_timestamp() }}) as created_at,
         ad_account_id,
         name as creative_name,
         web_view_url as url,

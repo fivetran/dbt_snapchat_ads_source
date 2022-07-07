@@ -28,6 +28,7 @@ final as (
         attachment_quartile_2,
         attachment_quartile_3,
         (attachment_total_view_time_millis / 1000000.0) as attachment_total_view_time,
+        attachment_view_completion,
         quartile_1,
         quartile_2,
         quartile_3,

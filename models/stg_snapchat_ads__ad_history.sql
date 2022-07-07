@@ -23,9 +23,10 @@ final as (
     
     select 
         id as ad_id,
+        name as ad_name,
+        cast (created_at as {{ dbt_utils.type_timestamp() }}) as created_at,
         ad_squad_id,
         creative_id,
-        name as ad_name,
         cast (_fivetran_synced as {{ dbt_utils.type_timestamp() }}) as _fivetran_synced
     from fields
 ),
