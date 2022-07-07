@@ -102,6 +102,7 @@ sources:
 
       - name: ad_squad_hourly_report
         identifier: "{{ var('snapchat_ads__ad_squad_hourly_report_identifier', 'ad_squad_hourly_report') }}"
+        description: Each record represents an hourly performance summary for each ad squad.
         columns:
           - name: ad_squad_id
             description: ID of the ad squad.
@@ -159,6 +160,7 @@ sources:
 
       - name: campaign_hourly_report
         identifier: "{{ var('snapchat_ads__campaign_hourly_report_identifier', 'campaign_hourly_report') }}"
+        description: Each record represents an hourly performance summary for each campaign.
         columns:
           - name: campaign_id
             description: ID of campaign
