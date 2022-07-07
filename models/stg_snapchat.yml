@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: stg_snapchat__ad_account_history
+  - name: stg_snapchat_ads__ad_account_history
     description: Each record in this table represents a historic version of an ad account in Snapchat.
     tests:
       - dbt_utils.unique_combination_of_columns:
@@ -18,7 +18,7 @@ models:
       - name: is_most_recent_record
         description: "{{ doc('is_most_recent_record') }}"
 
-  - name: stg_snapchat__ad_history
+  - name: stg_snapchat_ads__ad_history
     description: Each record in this table represents a historic version of an ad in Snapchat.
     tests:
       - dbt_utils.unique_combination_of_columns:
@@ -39,7 +39,7 @@ models:
       - name: is_most_recent_record
         description: "{{ doc('is_most_recent_record') }}"
 
-  - name: stg_snapchat__ad_hourly_report
+  - name: stg_snapchat_ads__ad_hourly_report
     description: Each record represents an hourly performance summary for an ad in Snapchat.
     tests:
       - dbt_utils.unique_combination_of_columns:
@@ -58,7 +58,7 @@ models:
       - name: swipes
         description: The number of swipes for an ad in the hour of the record.
 
-  - name: stg_snapchat__ad_squad_history
+  - name: stg_snapchat_ads__ad_squad_history
     description: Each record in this table represents a historic version of an ad squad in Snapchat.
     tests:
       - dbt_utils.unique_combination_of_columns:
@@ -77,7 +77,9 @@ models:
       - name: is_most_recent_record
         description: "{{ doc('is_most_recent_record') }}"
 
-  - name: stg_snapchat__campaign_history
+  - name: stg_snapchat_ads__ad_squad_hourly_report
+
+  - name: stg_snapchat_ads__campaign_history
     description: Each record in this table represents a historic version of a campaign in Snapchat.
     tests:
       - dbt_utils.unique_combination_of_columns:
@@ -96,7 +98,9 @@ models:
       - name: is_most_recent_record
         description: "{{ doc('is_most_recent_record') }}"
 
-  - name: stg_snapchat__creative_history
+  - name: stg_snapchat_ads__campaign_hourly_report
+
+  - name: stg_snapchat_ads__creative_history
     description: Each record in this table represents a historic version of a creative in Snapchat.
     tests:
       - dbt_utils.unique_combination_of_columns:
@@ -117,7 +121,7 @@ models:
       - name: is_most_recent_record
         description: "{{ doc('is_most_recent_record') }}"
 
-  - name: stg_snapchat__creative_url_tag_history
+  - name: stg_snapchat_ads__creative_url_tag_history
     description: Each record in this table represents a URL paramter key-value pair for a creative in Snapchat.
     tests:
       - dbt_utils.unique_combination_of_columns:

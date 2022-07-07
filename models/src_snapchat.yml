@@ -41,12 +41,38 @@ sources:
             description: The ID of the ad that the report relates to in Snapchat.
           - name: date
             description: The hour that the report relates to.
+          - name: attachment_quartile_1
+            description: Number of times your Long Form Video was viewed to 25% 
+          - name: attachment_quartile_2
+            description: Number of times your Long Form Video was viewed to 50% 
+          - name: attachment_quartile_3
+            description: Number of times your Long Form Video was viewed to 75% 
+          - name: attachment_total_view_time_millis
+            description: Total time Snapchatters spent on the attachment (HH:MM:SS)
+          - name: quartile_1
+            description: The number of times your video ad was viewed to 25% 
+          - name: quartile_2
+            description: The number of times your video ad was viewed to 50% 
+          - name: quartile_3
+            description: The number of times your video ad was viewed to 75% 
+          - name: saves
+            description: Number of times a lens/filter was saved to Memories
+          - name: shares
+            description: Number of times a lens/filter was shared in a Chat or Story
+          - name: screen_time_millis
+            description: The number of milli seconds spent watching your ad across all paid impressions. Screen time starts recording as soon as the media is fully rendered on the device and the autoplay video starts
+          - name: video_views
+            description: The number of times your video was watched at least 2 seconds or swiped up, whichever comes first
+          - name: view_completion
+            description: The number of times your video ad was viewed to 97% 
+          - name: view_time_millis
+            description: The number of milli seconds spent watching your ad across all users reached.
           - name: impressions
             description: The number of impressions for an ad in the hour of the record.
           - name: spend
-            description: The amount of spend for an ad in the hour of the record.
+            description: The amount of spend in millis for an ad in the hour of the record.
           - name: swipes
-            description: The number of swipes for an ad in the hour of the record.
+            description: The number of swipes for an ad in the hour of the record. Swipes are when your ad was swiped up on or the CTA was tapped to view the attachment below.
 
       - name: ad_squad_history
         description: Each record in this table represents a historic version of an ad squad in Snapchat.
@@ -60,6 +86,8 @@ sources:
           - name: name
             description: The name of the ad squad in Snapchat.
 
+      - name: ad_squad_hourly_report
+
       - name: campaign_history
         description: Each record in this table represents a historic version of a campaign in Snapchat.
         columns:
@@ -71,6 +99,8 @@ sources:
             description: The ID of the related ad account in Snapchat.
           - name: name
             description: The name of the campaign in Snapchat.
+
+      - name: campaign_hourly_report
 
       - name: creative_history
         description: Each record in this table represents a historic version of a creative in Snapchat.

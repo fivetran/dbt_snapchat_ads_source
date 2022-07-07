@@ -2,7 +2,7 @@
 with base as (
 
     select * 
-    from {{ ref('stg_snapchat_ads_source__ad_squad_hourly_report_tmp') }}
+    from {{ ref('stg_snapchat_ads__ad_squad_hourly_report_tmp') }}
 ),
 
 fields as (
@@ -10,7 +10,7 @@ fields as (
     select
         {{
             fivetran_utils.fill_staging_columns(
-                source_columns=adapter.get_columns_in_relation(ref('stg_snapchat_ads_source__ad_squad_hourly_report_tmp')),
+                source_columns=adapter.get_columns_in_relation(ref('stg_snapchat_ads__ad_squad_hourly_report_tmp')),
                 staging_columns=get_ad_squad_hourly_report_columns()
             )
         }}
