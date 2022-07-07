@@ -9,7 +9,9 @@ vars:
     ad_history: "{{ source('snapchat_ads','ad_history') }}"
     ad_hourly_report: "{{ source('snapchat_ads','ad_hourly_report') }}"
     ad_squad_history: "{{ source('snapchat_ads','ad_squad_history') }}"
+    ad_squad_hourly_report: "{{ source('snapchat_ads','ad_squad_hourly_report') }}"
     campaign_history: "{{ source('snapchat_ads','campaign_history') }}"
+    campaign_hourly_report: "{{ source('snapchat_ads','campaign_hourly_report') }}"
     creative_history: "{{ source('snapchat_ads','creative_history') }}"
     creative_url_tag_history: "{{ source('snapchat_ads','creative_url_tag_history') }}"
 

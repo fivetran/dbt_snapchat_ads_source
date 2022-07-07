@@ -1,3 +1,6 @@
+# dbt_snapchat_ads_source v0.4.0
+## 🎉 Feature Enhancements 🎉
+
 # dbt_snapchat_ads_source v0.3.1
 ## Bug Fixes
 - Includes `updated_at` in uniqueness tests on `stg_snapchat__creative_url_tag_history`. This was originally missing, causing erroneous uniqueness test failures on this history table ([#10](https://github.com/fivetran/dbt_snapchat_ads_source/issues/10)).
