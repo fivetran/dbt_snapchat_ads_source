@@ -25,7 +25,7 @@ final as (
         id as ad_squad_id,
         campaign_id,
         name as ad_squad_name,
-        _fivetran_synced
+        cast (_fivetran_synced as {{ dbt_utils.type_timestamp() }}) as _fivetran_synced
     from fields
 ),
 

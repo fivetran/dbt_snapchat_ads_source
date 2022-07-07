@@ -27,7 +27,7 @@ final as (
         attachment_quartile_3,
         attachment_total_view_time_millis,
         attachment_view_completion,
-        date,
+        cast (date as {{ dbt_utils.type_timestamp() }}) as date_hour,
         impressions,
         quartile_1,
         quartile_2,

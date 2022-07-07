@@ -26,7 +26,7 @@ final as (
         ad_account_id,
         name as creative_name,
         web_view_url as url,
-        _fivetran_synced
+        cast (_fivetran_synced as {{ dbt_utils.type_timestamp() }}) as _fivetran_synced
     from fields
 ), 
 

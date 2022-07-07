@@ -25,7 +25,7 @@ final as (
         creative_id,
         key as param_key,
         value as param_value,
-        updated_at
+        cast (updated_at as {{ dbt_utils.type_timestamp() }}) as updated_at
     from fields
 ),
 

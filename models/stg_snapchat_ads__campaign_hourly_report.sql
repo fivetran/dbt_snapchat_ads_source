@@ -28,7 +28,7 @@ final as (
         attachment_total_view_time_millis,
         attachment_view_completion,
         campaign_id,
-        date,
+        cast (date as {{ dbt_utils.type_timestamp() }}) as date_hour,
         impressions,
         quartile_1,
         quartile_2,
