@@ -18,6 +18,12 @@ sources:
             description: The ID of the account in Snapchat.
           - name: name
             description: The name of the account in Snapchat.
+          - name: advertiser
+            description: Name of advertiser
+          - name: currency
+            description: Currency used by account
+          - name: created_at
+            description: Created at timestamp
 
       - name: ad_history
         identifier: "{{ var('snapchat_ads__ad_history_identifier', 'ad_history') }}"
@@ -33,13 +39,13 @@ sources:
             description: The ID of the related creative in Snapchat.
           - name: name
             description: The name of the ad in Snapchat.
+          - name: created_at
+            description: Created at timestamp
 
       - name: ad_hourly_report
         identifier: "{{ var('snapchat_ads__ad_hourly_report_identifier', 'ad_hourly_report') }}"
         description: Each record represents an hourly performance summary for an ad in Snapchat.
         columns:
-          - name: _fivetran_synced
-            description: "{{ doc('_fivetran_synced') }}"
           - name: ad_id
             description: The ID of the ad that the report relates to in Snapchat.
           - name: date
@@ -52,6 +58,8 @@ sources:
             description: Number of times your Long Form Video was viewed to 75% 
           - name: attachment_total_view_time_millis
             description: Total time Snapchatters spent on the attachment (HH:MM:SS)
+          - name: attachment_view_completion
+            description: The number of times your Long Form Video was viewed to completion (97% )
           - name: quartile_1
             description: The number of times your video ad was viewed to 25% 
           - name: quartile_2
@@ -67,7 +75,7 @@ sources:
           - name: video_views
             description: The number of times your video was watched at least 2 seconds or swiped up, whichever comes first
           - name: view_completion
-            description: The number of times your video ad was viewed to 97% 
+            description: The number of times your video ad was viewed to completion (97% )
           - name: view_time_millis
             description: The number of milli seconds spent watching your ad across all users reached.
           - name: impressions
@@ -84,7 +92,9 @@ sources:
           - name: _fivetran_synced
             description: "{{ doc('_fivetran_synced') }}"
           - name: id
-            description: The ID fo the ad squad in Snapchat.
+            description: The ID of the ad squad in Snapchat.
+          - name: created_at
+            description: Created at timestamp.
           - name: campaign_id
             description: The ID of the related campaign in Snapchat.
           - name: name
@@ -92,6 +102,45 @@ sources:
 
       - name: ad_squad_hourly_report
         identifier: "{{ var('snapchat_ads__ad_squad_hourly_report_identifier', 'ad_squad_hourly_report') }}"
+        columns:
+          - name: ad_squad_id
+            description: ID of the ad squad.
+          - name: date
+            description: The hour that the report relates to.
+          - name: attachment_quartile_1
+            description: Number of times your Long Form Video was viewed to 25% 
+          - name: attachment_quartile_2
+            description: Number of times your Long Form Video was viewed to 50% 
+          - name: attachment_quartile_3
+            description: Number of times your Long Form Video was viewed to 75% 
+          - name: attachment_total_view_time_millis
+            description: Total time Snapchatters spent on the attachment (HH:MM:SS)
+          - name: attachment_view_completion
+            description: The number of times your Long Form Video was viewed to completion (97% )
+          - name: quartile_1
+            description: The number of times your video ad was viewed to 25% 
+          - name: quartile_2
+            description: The number of times your video ad was viewed to 50% 
+          - name: quartile_3
+            description: The number of times your video ad was viewed to 75% 
+          - name: saves
+            description: Number of times a lens/filter was saved to Memories
+          - name: shares
+            description: Number of times a lens/filter was shared in a Chat or Story
+          - name: screen_time_millis
+            description: The number of milli seconds spent watching your ad across all paid impressions. Screen time starts recording as soon as the media is fully rendered on the device and the autoplay video starts
+          - name: video_views
+            description: The number of times your video was watched at least 2 seconds or swiped up, whichever comes first
+          - name: view_completion
+            description: The number of times your video ad was viewed to completion (97% )
+          - name: view_time_millis
+            description: The number of milli seconds spent watching your ad across all users reached.
+          - name: impressions
+            description: The number of impressions for an ad in the hour of the record.
+          - name: spend
+            description: The amount of spend in millis for an ad in the hour of the record.
+          - name: swipes
+            description: The number of swipes for an ad in the hour of the record. Swipes are when your ad was swiped up on or the CTA was tapped to view the attachment below.
 
       - name: campaign_history
         identifier: "{{ var('snapchat_ads__campaign_history_identifier', 'campaign_history') }}"
@@ -101,6 +150,8 @@ sources:
             description: "{{ doc('_fivetran_synced') }}"
           - name: id
             description: The name of the campaign in Snapchat.
+          - name: created_at
+            description: Created at timestamp.
           - name: ad_account_id
             description: The ID of the related ad account in Snapchat.
           - name: name
@@ -108,6 +159,45 @@ sources:
 
       - name: campaign_hourly_report
         identifier: "{{ var('snapchat_ads__campaign_hourly_report_identifier', 'campaign_hourly_report') }}"
+        columns:
+          - name: campaign_id
+            description: ID of campaign
+          - name: date
+            description: The hour that the report relates to.
+          - name: attachment_quartile_1
+            description: Number of times your Long Form Video was viewed to 25% 
+          - name: attachment_quartile_2
+            description: Number of times your Long Form Video was viewed to 50% 
+          - name: attachment_quartile_3
+            description: Number of times your Long Form Video was viewed to 75% 
+          - name: attachment_total_view_time_millis
+            description: Total time Snapchatters spent on the attachment (HH:MM:SS)
+          - name: attachment_view_completion
+            description: The number of times your Long Form Video was viewed to completion (97% )
+          - name: quartile_1
+            description: The number of times your video ad was viewed to 25% 
+          - name: quartile_2
+            description: The number of times your video ad was viewed to 50% 
+          - name: quartile_3
+            description: The number of times your video ad was viewed to 75% 
+          - name: saves
+            description: Number of times a lens/filter was saved to Memories
+          - name: shares
+            description: Number of times a lens/filter was shared in a Chat or Story
+          - name: screen_time_millis
+            description: The number of milli seconds spent watching your ad across all paid impressions. Screen time starts recording as soon as the media is fully rendered on the device and the autoplay video starts
+          - name: video_views
+            description: The number of times your video was watched at least 2 seconds or swiped up, whichever comes first
+          - name: view_completion
+            description: The number of times your video ad was viewed to completion (97% )
+          - name: view_time_millis
+            description: The number of milli seconds spent watching your ad across all users reached.
+          - name: impressions
+            description: The number of impressions for an ad in the hour of the record.
+          - name: spend
+            description: The amount of spend in millis for an ad in the hour of the record.
+          - name: swipes
+            description: The number of swipes for an ad in the hour of the record. Swipes are when your ad was swiped up on or the CTA was tapped to view the attachment below.
 
       - name: creative_history
         identifier: "{{ var('snapchat_ads__creative_history_identifier', 'creative_history') }}"
@@ -117,6 +207,8 @@ sources:
             description: "{{ doc('_fivetran_synced') }}"
           - name: id
             description: The ID of the creative in Snapchat.
+          - name: created_at
+            description: Created at timestamp.
           - name: ad_account_id
             description: The ID of the related ad account in Snapchat.
           - name: name
@@ -132,6 +224,8 @@ sources:
             description: "{{ doc('_fivetran_synced') }}"
           - name: creative_id
             description: The ID of the related creative in Snapchat.
+          - name: created_at
+            description: Created at timestamp.
           - name: key
             description: The URL parameter key, i.e. UTM_SOURCE.
           - name: value
