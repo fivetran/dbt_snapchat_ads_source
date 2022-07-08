@@ -24,6 +24,8 @@ sources:
             description: Currency used by account
           - name: created_at
             description: Created at timestamp
+          - name: timezone
+            description: Account timezone
 
       - name: ad_history
         identifier: "{{ var('snapchat_ads__ad_history_identifier', 'ad_history') }}"

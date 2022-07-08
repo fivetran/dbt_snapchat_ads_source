@@ -21,6 +21,8 @@ models:
         description: Currency used by account
       - name: created_at
         description: Created at timestamp
+      - name: timezone
+        description: Account timezone
       - name: is_most_recent_record
         description: "{{ doc('is_most_recent_record') }}"
 
