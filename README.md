@@ -10,20 +10,20 @@
         <img src="https://img.shields.io/badge/Contributions-welcome-blueviolet" /></a>
 </p>
 
-# Snapchat Source dbt Package ([Docs](https://fivetran.github.io/dbt_snapchat_source/))
+# Snapchat Ads Source dbt Package ([Docs](https://fivetran.github.io/dbt_snapchat_ads_source/))
 # 📣 What does this dbt package do?
-- Materializes [Snapchat staging tables](https://fivetran.github.io/dbt_snapchat_source/#!/overview/snapchat_source/models/?g_v=1) which leverage data in the format described by [this ERD](https://fivetran.com/docs/applications/snapchat/#schemainformation). These staging tables clean, test, and prepare your Snapchat data from [Fivetran's connector](https://fivetran.com/docs/applications/snapchat) for analysis by doing the following:
+- Materializes [Snapchat Ads staging tables](https://fivetran.github.io/dbt_snapchat_ads_source/#!/overview/snapchat_ads_source/models/?g_v=1) which leverage data in the format described by [this ERD](https://fivetran.com/docs/applications/snapchat_ads/#schemainformation). These staging tables clean, test, and prepare your Snapchat Ads data from [Fivetran's connector](https://fivetran.com/docs/applications/snapchat_ads) for analysis by doing the following:
   - Name columns for consistency across all packages and for easier analysis
   - Adds freshness tests to source data
   - Adds column-level testing where applicable. For example, all primary keys are tested for uniqueness and non-null values.
-- Generates a comprehensive data dictionary of your Snapchat data through the [dbt docs site](https://fivetran.github.io/dbt_snapchat_source/).
-- These tables are designed to work simultaneously with our [Snapchat transformation package](https://github.com/fivetran/dbt_snapchat).
-    - Refer to our [Docs site](https://fivetran.github.io/dbt_snapchat_source/#!/overview/salesforce_source/models/?g_v=1) for more details about these materialized models. 
+- Generates a comprehensive data dictionary of your Snapchat Ads data through the [dbt docs site](https://fivetran.github.io/dbt_snapchat_ads_source/).
+- These tables are designed to work simultaneously with our [Snapchat Ads transformation package](https://github.com/fivetran/dbt_snapchat_ads).
+    - Refer to our [Docs site](https://fivetran.github.io/dbt_snapchat_ads_source/#!/overview/salesforce_source/models/?g_v=1) for more details about these materialized models. 
 
 # 🎯 How do I use the dbt package?
 ## Step 1: Prerequisites
 To use this dbt package, you must have the following:
-- At least one Fivetran Snapchat connector syncing data into your destination. 
+- At least one Fivetran Snapchat Ads connector syncing data into your destination. 
 - A **BigQuery**, **Snowflake**, **Redshift**, **Databricks**, or **PostgreSQL** destination.
 
 ### Databricks Dispatch Configuration
@@ -35,42 +35,42 @@ dispatch:
 ```
 
 ## Step 2: Install the package
-Include the following snapchat_source package version in your `packages.yml` file.
+Include the following snapchat_ads_source package version in your `packages.yml` file.
 > TIP: Check [dbt Hub](https://hub.getdbt.com/) for the latest installation instructions or [read the dbt docs](https://docs.getdbt.com/docs/package-management) for more information on installing packages.
 ```yaml
 packages:
-  - package: fivetran/snapchat_source
+  - package: fivetran/snapchat_ads_source
     version: [">=0.4.0", "<0.5.0"]
 ```
 ## Step 3: Configure your variables
 
 ### Define database and schema variables
-By default, this package runs using your destination and the `snapchat` schema. If this is not where your Snapchat data is (for example, if your Snapchat schema is named `snapchat_fivetran`), add the following configuration to your root `dbt_project.yml` file:
+By default, this package runs using your destination and the `snapchat_ads_source` schema. If this is not where your Snapchat Ads data is (for example, if your Snapchat Ads schema is named `snapchat_ads_fivetran`), add the following configuration to your root `dbt_project.yml` file:
 
 ```yml
 vars:
-    snapchat_database: your_destination_name
-    snapchat_schema: your_schema_name 
+    snapchat_ads_source_database: your_destination_name
+    snapchat_ads_source_schema: your_schema_name 
 ```
 
 ### Change the source table references
 If an individual source table has a different name than the package expects, add the table name as it appears in your destination to the respective variable:
-> IMPORTANT: See this project's [`dbt_project.yml`](https://github.com/fivetran/dbt_snapchat_source/blob/main/dbt_project.yml) variable declarations to see the expected names.
+> IMPORTANT: See this project's [`dbt_project.yml`](https://github.com/fivetran/dbt_snapchat_ads_source/blob/main/dbt_project.yml) variable declarations to see the expected names.
     
 ```yml
 vars:
-    snapchat_<default_source_table_name>_identifier: your_table_name 
+    snapchat_ads_<default_source_table_name>_identifier: your_table_name 
 ```
 
 ## (Optional) Step 4: Additional configurations
 <details><summary>Expand to view configurations</summary>
     
 ### Change the build schema
-By default, this package builds the Snapchat staging models within a schema titled (`<target_schema>` + `_stg_snapchat`) in your destination. If this is not where you would like your Snapchat staging data to be written to, add the following configuration to your root `dbt_project.yml` file:
+By default, this package builds the Snapchat Ads staging models within a schema titled (`<target_schema>` + `_stg_snapchat_ads`) in your destination. If this is not where you would like your Snapchat Ads staging data to be written to, add the following configuration to your root `dbt_project.yml` file:
 
 ```yml
 models:
-    snapchat_source:
+    snapchat_ads_source:
       +schema: my_new_schema_name # leave blank for just the target_schema
 ```
     
@@ -97,7 +97,7 @@ packages:
           
 # 🙌 How is this package maintained and can I contribute?
 ## Package Maintenance
-The Fivetran team maintaining this package _only_ maintains the latest version of the package. We highly recommend that you stay consistent with the [latest version](https://hub.getdbt.com/fivetran/snapchat_source/latest/) of the package and refer to the [CHANGELOG](https://github.com/fivetran/dbt_snapchat_source/blob/main/CHANGELOG.md) and release notes for more information on changes across versions.
+The Fivetran team maintaining this package _only_ maintains the latest version of the package. We highly recommend that you stay consistent with the [latest version](https://hub.getdbt.com/fivetran/snapchat_ads_source/latest/) of the package and refer to the [CHANGELOG](https://github.com/fivetran/dbt_snapchat_ads_source/blob/main/CHANGELOG.md) and release notes for more information on changes across versions.
 
 ## Contributions
 A small team of analytics engineers at Fivetran develops these dbt packages. However, the packages are made better by community contributions! 
@@ -105,6 +105,6 @@ A small team of analytics engineers at Fivetran develops these dbt packages. How
 We highly encourage and welcome contributions to this package. Check out [this dbt Discourse article](https://discourse.getdbt.com/t/contributing-to-a-dbt-package/657) to learn how to contribute to a dbt package!
 
 # 🏪 Are there any resources available?
-- If you have questions or want to reach out for help, please refer to the [GitHub Issue](https://github.com/fivetran/dbt_snapchat_source/issues/new/choose) section to find the right avenue of support for you.
+- If you have questions or want to reach out for help, please refer to the [GitHub Issue](https://github.com/fivetran/dbt_snapchat_ads_source/issues/new/choose) section to find the right avenue of support for you.
 - If you would like to provide feedback to the dbt package team at Fivetran or would like to request a new dbt package, fill out our [Feedback Form](https://www.surveymonkey.com/r/DQ7K7WW).
 - Have questions or want to just say hi? Book a time during our office hours [on Calendly](https://calendly.com/fivetran-solutions-team/fivetran-solutions-team-office-hours) or email us at solutions@fivetran.com.
