@@ -1,6 +1,6 @@
 <p align="center">
     <a alt="License"
-        href="https://github.com/fivetran/dbt_salesforce_source/blob/main/LICENSE">
+        href="https://github.com/fivetran/dbt_snapchat_source/blob/main/LICENSE">
         <img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" /></a>
     <a alt="dbt-core">
         <img src="https://img.shields.io/badge/dbt_core™-version_>=1.0.0_<2.0.0-orange.svg" /></a>
@@ -53,6 +53,9 @@ vars:
     snapchat_ads_source_schema: your_schema_name 
 ```
 
+## (Optional) Step 4: Additional configurations
+<details><summary>Expand to view configurations</summary>
+
 ### Change the source table references
 If an individual source table has a different name than the package expects, add the table name as it appears in your destination to the respective variable:
 > IMPORTANT: See this project's [`dbt_project.yml`](https://github.com/fivetran/dbt_snapchat_ads_source/blob/main/dbt_project.yml) variable declarations to see the expected names.
@@ -62,9 +65,6 @@ vars:
     snapchat_ads_<default_source_table_name>_identifier: your_table_name 
 ```
 
-## (Optional) Step 4: Additional configurations
-<details><summary>Expand to view configurations</summary>
-    
 ### Change the build schema
 By default, this package builds the Snapchat Ads staging models within a schema titled (`<target_schema>` + `_stg_snapchat_ads`) in your destination. If this is not where you would like your Snapchat Ads staging data to be written to, add the following configuration to your root `dbt_project.yml` file:
 
@@ -76,7 +76,7 @@ models:
     
 </details>
 
-## (Optional) Step 6: Orchestrate your models with Fivetran Transformations for dbt Core™
+## (Optional) Step 5: Orchestrate your models with Fivetran Transformations for dbt Core™
 <details><summary>Expand to view details</summary>
 <br>
     
