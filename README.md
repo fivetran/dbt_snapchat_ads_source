@@ -54,6 +54,15 @@ vars:
 ```
 
 ## (Optional) Step 4: Additional configurations
+### Passing Through Additional Metrics
+By default, this package will select fields from the source tables to pass into the staging models, that are shown in the existing staging models. If you would like to pass through additional metrics to the staging models, add the following configuration to your `dbt_project.yml` file:
+
+```yml
+vars:
+  snapchat_ads__ad_hourly_passthrough_metrics: ['the', 'list', 'of', 'metric', 'columns', 'to', 'include'] # from snapchat_ads.ad_hourly_report
+  snapchat_ads__ad_squad_hourly_passthrough_metrics: ['the', 'list', 'of', 'metric', 'columns', 'to', 'include'] # from snapchat_ads.ad_squad_hourly_report
+  snapchat_ads__campaign_hourly_report_passthrough_metrics: ['the', 'list', 'of', 'metric', 'columns', 'to', 'include'] # from snapchat_ads.campaign_hourly_report
+```
 ### Change the source table references
 If an individual source table has a different name than the package expects, add the table name as it appears in your destination to the respective variable:
 > IMPORTANT: See this project's [`dbt_project.yml`](https://github.com/fivetran/dbt_snapchat_ads_source/blob/main/dbt_project.yml) variable declarations to see the expected names.

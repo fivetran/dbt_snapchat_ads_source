@@ -39,6 +39,10 @@ final as (
         impressions,
         (spend / 1000000.0) as spend,
         swipes
+        
+        {% for metric in var('snapchat_ads__campaign_hourly_report_passthrough_metrics', []) %}
+        , {{ metric }}
+        {% endfor %}
     from fields
 )
 
