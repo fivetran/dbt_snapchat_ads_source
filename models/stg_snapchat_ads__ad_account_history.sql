@@ -25,8 +25,9 @@ final as (
         cast (created_at as {{ dbt_utils.type_timestamp() }}) as created_at,
         advertiser, 
         currency,
-        _fivetran_synced,
-        timezone
+        timezone,
+        cast (_fivetran_synced as {{ dbt_utils.type_timestamp() }}) as _fivetran_synced,
+        cast (updated_at as {{ dbt_utils.type_timestamp() }}) as updated_at
     from fields
 ),
 
