@@ -7,6 +7,10 @@ sources:
     loader: Fivetran
     loaded_at_field: _fivetran_synced
 
+    freshness: 
+      warn_after: {count: 48, period: hour}
+      error_after: {count: 168, period: hour}
+
     tables:
       - name: ad_account_history
         identifier: "{{ var('snapchat_ads_ad_account_history_identifier', 'ad_account_history') }}"
