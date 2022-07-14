@@ -92,7 +92,7 @@ models:
       - name: impressions
         description: The number of impressions for an ad in the hour of the record.
       - name: spend
-        description: The amount of spend in microdollars for an ad in the hour of the record converted from micros.
+        description: The amount of spend for an ad in the hour of the record converted from micros.
       - name: swipes
         description: The number of swipes for an ad in the hour of the record.
 
@@ -160,7 +160,7 @@ models:
       - name: impressions
         description: The number of impressions for an ad in the hour of the record.
       - name: spend
-        description: The amount of spend in microdollars for an ad in the hour of the record.
+        description: The amount of spend for an ad in the hour of the record.
       - name: swipes
         description: The number of swipes for an ad in the hour of the record. Swipes are when your ad was swiped up on or the CTA was tapped to view the attachment below.
 
@@ -228,7 +228,7 @@ models:
       - name: impressions
         description: The number of impressions for an ad in the hour of the record.
       - name: spend
-        description: The amount of spend in microdollars for an ad in the hour of the record.
+        description: The amount of spend for an ad in the hour of the record.
       - name: swipes
         description: The number of swipes for an ad in the hour of the record. Swipes are when your ad was swiped up on or the CTA was tapped to view the attachment below.
 
