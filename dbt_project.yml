@@ -17,7 +17,7 @@ vars:
 
 models:
   snapchat_ads_source:
-    +schema: stg_snapchat_ads
+    +schema: snapchat_ads_source
     +materialized: table
     tmp:
       +materialized: view
