@@ -1,1 +1,2 @@
-select * from {{ var('ad_account_history') }}
+select *
+from {{ var('ad_account_history') }}

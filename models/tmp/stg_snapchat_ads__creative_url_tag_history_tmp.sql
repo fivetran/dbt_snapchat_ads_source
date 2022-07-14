@@ -1,1 +1,2 @@
-select * from {{ var('creative_url_tag_history') }}
+select *
+from {{ var('creative_url_tag_history') }}

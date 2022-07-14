@@ -1,1 +1,2 @@
-select * from {{ var('campaign_hourly_report') }}
+select *
+from {{ var('campaign_hourly_report') }}
