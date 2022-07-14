@@ -1,8 +1,9 @@
 # dbt_snapchat_ads_source v0.4.0
 ## 🎉 Feature Enhancements 🎉
-This PR applies the Ad Reporting V2 updates:
+PR [#13](https://github.com/fivetran/dbt_snapchat_ads_source/pull/13) applies the Ad Reporting V2 updates:
 
-- Adds in the `ad_squad_hourly_report` and `campaign_hourly_report` source tables and accompanying staging models, and the field descriptions and grain uniquess tests for the new models 
+- Adds the `ad_squad_hourly_report` and `campaign_hourly_report` source tables and accompanying staging models
+- Adds the field descriptions and grain uniqueness tests for the new models 
 - Adds additional fields to existing models 
 - Applies README standardization updates
 - Introduces the identifier variable for all source models
