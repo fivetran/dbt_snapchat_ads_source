@@ -3,7 +3,6 @@ with base as (
 
     select * 
     from {{ ref('stg_snapchat_ads__ad_hourly_report_tmp') }}
-
 ),
 
 fields as (
@@ -15,7 +14,6 @@ fields as (
                 staging_columns=get_ad_hourly_report_columns()
             )
         }}
-        
     from base
 ),
 
@@ -44,4 +42,5 @@ final as (
     from fields
 )
 
-select * from final
+select * 
+from final

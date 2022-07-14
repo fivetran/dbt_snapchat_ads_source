@@ -3,7 +3,6 @@ with base as (
 
     select * 
     from {{ ref('stg_snapchat_ads__campaign_history_tmp') }}
-
 ),
 
 fields as (
@@ -15,7 +14,6 @@ fields as (
                 staging_columns=get_campaign_history_columns()
             )
         }}
-        
     from base
 ),
 
@@ -36,7 +34,7 @@ most_recent as (
         *,
         row_number() over (partition by campaign_id order by _fivetran_synced desc) = 1 as is_most_recent_record
     from final
-
 )
 
-select * from most_recent
+select * 
+from most_recent
