@@ -2,8 +2,8 @@ version: 2
 
 sources:
   - name: snapchat_ads
-    schema: "{{ var('snapchat_schema', 'snapchat_ads') }}"
-    database: "{% if target.type != 'spark'%}{{ var('snapchat_database', target.database) }}{% endif %}"
+    schema: "{{ var('snapchat_ads_schema', 'snapchat_ads') }}"
+    database: "{% if target.type != 'spark'%}{{ var('snapchat_ads_database', target.database) }}{% endif %}"
     loader: Fivetran
     loaded_at_field: _fivetran_synced
 
