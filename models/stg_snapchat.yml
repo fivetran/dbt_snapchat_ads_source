@@ -11,8 +11,12 @@ models:
     columns:
       - name: _fivetran_synced
         description: "{{ doc('_fivetran_synced') }}"
+        tests:
+          - not_null
       - name: ad_account_id
         description: The ID of the account in Snapchat.
+        tests:
+          - not_null
       - name: ad_account_name
         description: The name of the account in Snapchat.
       - name: advertiser
@@ -36,8 +40,12 @@ models:
     columns:
       - name: _fivetran_synced
         description: "{{ doc('_fivetran_synced') }}"
+        tests:
+          - not_null
       - name: ad_id
         description: The ID of the ad in Snapchat.
+        tests:
+          - not_null
       - name: ad_squad_id
         description: The ID of the related ad squad in Snapchat.
       - name: creative_id
@@ -59,8 +67,12 @@ models:
     columns:
       - name: ad_id
         description: The ID of the ad that the report relates to in Snapchat.
+        tests:
+          - not_null
       - name: date_hour
         description: The hour that the report relates to.
+        tests:
+          - not_null
       - name: attachment_quartile_1
         description: Number of times your Long Form Video was viewed to 25% 
       - name: attachment_quartile_2
@@ -106,8 +118,12 @@ models:
     columns:
       - name: _fivetran_synced
         description: "{{ doc('_fivetran_synced') }}"
+        tests:
+          - not_null
       - name: ad_squad_id
         description: The ID of the ad squad in Snapchat.
+        tests:
+          - not_null
       - name: ad_squad_name
         description: The name of the ad squad in Snapchat.
       - name: created_at
@@ -127,8 +143,12 @@ models:
     columns:
       - name: ad_squad_id
         description: ID of the ad squad.
+        tests:
+          - not_null
       - name: date_hour
         description: The hour that the report relates to.
+        tests:
+          - not_null
       - name: attachment_quartile_1
         description: Number of times your Long Form Video was viewed to 25% 
       - name: attachment_quartile_2
@@ -174,8 +194,12 @@ models:
     columns:
       - name: _fivetran_synced
         description: "{{ doc('_fivetran_synced') }}"
+        tests:
+          - not_null
       - name: campaign_id
         description: The id of the campaign in Snapchat.
+        tests:
+          - not_null
       - name: campaign_name
         description: The name of the campaign in Snapchat.
       - name: ad_account_id
@@ -195,8 +219,12 @@ models:
     columns:
       - name: campaign_id
         description: ID of campaign
+        tests:
+          - not_null
       - name: date_hour
         description: The hour that the report relates to.
+        tests:
+          - not_null
       - name: attachment_quartile_1
         description: Number of times your Long Form Video was viewed to 25% 
       - name: attachment_quartile_2
@@ -242,8 +270,12 @@ models:
     columns:
       - name: _fivetran_synced
         description: "{{ doc('_fivetran_synced') }}"
+        tests:
+          - not_null
       - name: creative_id
         description: The ID of the creative in Snapchat.
+        tests:
+          - not_null
       - name: creative_name
         description: The name of the creative in Snapchat.
       - name: ad_account_id
@@ -266,11 +298,15 @@ models:
     columns:
       - name: creative_id
         description: The ID of the related creative in Snapchat.
+        tests:
+          - not_null
       - name: param_key
         description: The URL parameter key, i.e. UTM_SOURCE.
       - name: param_value
         description: The URL parameter value, i.e. Snapchat.
       - name: updated_at
         description: Timestamp of when the record was updated.
+        tests:
+          - not_null
       - name: is_most_recent_record
         description: "{{ doc('is_most_recent_record') }}"
