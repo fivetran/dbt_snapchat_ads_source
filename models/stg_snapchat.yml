@@ -25,6 +25,8 @@ models:
         description: Currency used by account
       - name: created_at
         description: Created at timestamp
+      - name: updated_at
+        description: Timestamp of when the record was updated.
       - name: timezone
         description: Account timezone
       - name: is_most_recent_record
@@ -54,6 +56,8 @@ models:
         description: The name of the ad in Snapchat.
       - name: created_at
         description: Created at timestamp
+      - name: updated_at
+        description: Timestamp of when the record was updated.
       - name: is_most_recent_record
         description: "{{ doc('is_most_recent_record') }}"
 
@@ -128,6 +132,8 @@ models:
         description: The name of the ad squad in Snapchat.
       - name: created_at
         description: Created at timestamp.
+      - name: updated_at
+        description: Timestamp of when the record was updated.
       - name: campaign_id
         description: The ID of the related campaign in Snapchat.
       - name: is_most_recent_record
@@ -206,6 +212,8 @@ models:
         description: The ID of the related ad account in Snapchat.
       - name: created_at
         description: Created at timestamp.
+      - name: updated_at
+        description: Timestamp of when the record was updated.
       - name: is_most_recent_record
         description: "{{ doc('is_most_recent_record') }}"
 
@@ -284,6 +292,8 @@ models:
         description: The URL of the creative if the creative is of type 'web view'.
       - name: created_at
         description: Created at timestamp.
+      - name: updated_at
+        description: Timestamp of when the record was updated.
       - name: is_most_recent_record
         description: "{{ doc('is_most_recent_record') }}"
 
