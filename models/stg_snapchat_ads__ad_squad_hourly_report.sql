@@ -14,6 +14,11 @@ fields as (
                 staging_columns=get_ad_squad_hourly_report_columns()
             )
         }}
+        
+        {% for metric in var('snapchat_ads__ad_squad_hourly_passthrough_metrics', []) %}
+        , {{ metric }}
+        {% endfor %}
+        
     from base
 ),
 
