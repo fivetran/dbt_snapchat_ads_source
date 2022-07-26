@@ -92,7 +92,7 @@ sources:
             description: The number of swipes for an ad in the hour of the record. Swipes are when your ad was swiped up on or the CTA was tapped to view the attachment below.
 
       - name: ad_squad_history
-        identifier: "{{ var('snapchat_ads__ad_squad_history_identifier', 'ad_squad_history') }}"
+        identifier: "{{ var('snapchat_ads_ad_squad_history_identifier', 'ad_squad_history') }}"
         description: Each record in this table represents a historic version of an ad squad in Snapchat.
         columns:
           - name: _fivetran_synced
@@ -107,7 +107,7 @@ sources:
             description: The name of the ad squad in Snapchat.
 
       - name: ad_squad_hourly_report
-        identifier: "{{ var('snapchat_ads__ad_squad_hourly_report_identifier', 'ad_squad_hourly_report') }}"
+        identifier: "{{ var('snapchat_ads_ad_squad_hourly_report_identifier', 'ad_squad_hourly_report') }}"
         description: Each record represents an hourly performance summary for each ad squad.
         columns:
           - name: ad_squad_id
@@ -150,7 +150,7 @@ sources:
             description: The number of swipes for an ad in the hour of the record. Swipes are when your ad was swiped up on or the CTA was tapped to view the attachment below.
 
       - name: campaign_history
-        identifier: "{{ var('snapchat_ads__campaign_history_identifier', 'campaign_history') }}"
+        identifier: "{{ var('snapchat_ads_campaign_history_identifier', 'campaign_history') }}"
         description: Each record in this table represents a historic version of a campaign in Snapchat.
         columns:
           - name: _fivetran_synced
@@ -165,7 +165,7 @@ sources:
             description: The name of the campaign in Snapchat.
 
       - name: campaign_hourly_report
-        identifier: "{{ var('snapchat_ads__campaign_hourly_report_identifier', 'campaign_hourly_report') }}"
+        identifier: "{{ var('snapchat_ads_campaign_hourly_report_identifier', 'campaign_hourly_report') }}"
         description: Each record represents an hourly performance summary for each campaign.
         columns:
           - name: campaign_id
@@ -208,7 +208,7 @@ sources:
             description: The number of swipes for an ad in the hour of the record. Swipes are when your ad was swiped up on or the CTA was tapped to view the attachment below.
 
       - name: creative_history
-        identifier: "{{ var('snapchat_ads__creative_history_identifier', 'creative_history') }}"
+        identifier: "{{ var('snapchat_ads_creative_history_identifier', 'creative_history') }}"
         description: Each record in this table represents a historic version of a creative in Snapchat.
         columns:
           - name: _fivetran_synced
@@ -225,7 +225,7 @@ sources:
             description: The URL of the creative if the creative is of type 'web view'.
 
       - name: creative_url_tag_history
-        identifier: "{{ var('snapchat_ads__creative_url_tag_history_identifier', 'creative_url_tag_history') }}"
+        identifier: "{{ var('snapchat_ads_creative_url_tag_history_identifier', 'creative_url_tag_history') }}"
         description: Each record in this table represents a URL parameter key-value pair for a creative in Snapchat.
         columns:
           - name: _fivetran_synced
