@@ -7,10 +7,12 @@ PR [#13](https://github.com/fivetran/dbt_snapchat_ads_source/pull/13) applies th
 - Applies README standardization updates
 - Introduces the identifier variable for all source models
 - Casts all timestamp fields using dbt_utils.type_timestamp()
+- Introduces metric passthrough capability
 
 ## 🚨 Breaking Changes 🚨
-- Changed `snapchat_schema` and `snapchat_database` variable names to `snapchat_ads_schema` and `snapchat_ads_database` 
-- Updated model names and introduced metric passthrough capability
+- Changes `snapchat_schema` and `snapchat_database` variable names to `snapchat_ads_schema` and `snapchat_ads_database` 
+- Updates model names to prefix with `snapchat_ads`
+
 # dbt_snapchat_ads_source v0.3.1
 ## Bug Fixes
 - Includes `updated_at` in uniqueness tests on `stg_snapchat__creative_url_tag_history`. This was originally missing, causing erroneous uniqueness test failures on this history table ([#10](https://github.com/fivetran/dbt_snapchat_ads_source/issues/10)).
