@@ -7,7 +7,7 @@
     {"name": "id", "datatype": dbt_utils.type_string()},
     {"name": "name", "datatype": dbt_utils.type_string()},
     {"name": "updated_at", "datatype": dbt_utils.type_timestamp()},
-    {"name": "web_view_url", "datatype": dbt_utils.type_string()},
+    {"name": "web_view_url", "datatype": dbt_utils.type_string()}
 ] %}
 
 {{ return(columns) }}

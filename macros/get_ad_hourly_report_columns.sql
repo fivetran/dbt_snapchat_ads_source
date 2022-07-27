@@ -8,7 +8,7 @@
     {"name": "attachment_total_view_time_millis", "datatype": dbt_utils.type_numeric()},
     {"name": "attachment_view_completion", "datatype": dbt_utils.type_numeric()},
     {"name": "date", "datatype": dbt_utils.type_timestamp()},
-    {"name": "impressions", "datatype": dbt_utils.type_numeric()},,
+    {"name": "impressions", "datatype": dbt_utils.type_numeric()},
     {"name": "quartile_1", "datatype": dbt_utils.type_numeric()},
     {"name": "quartile_2", "datatype": dbt_utils.type_numeric()},
     {"name": "quartile_3", "datatype": dbt_utils.type_numeric()},
