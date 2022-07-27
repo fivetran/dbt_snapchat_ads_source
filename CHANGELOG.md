@@ -1,5 +1,9 @@
 # dbt_snapchat_ads_source v0.4.0
 PR [#13](https://github.com/fivetran/dbt_snapchat_ads_source/pull/13) applies the Ad Reporting V2 updates:
+
+## 🚨 Breaking Changes 🚨
+- Changes `snapchat_schema` and `snapchat_database` variable names to `snapchat_ads_schema` and `snapchat_ads_database` 
+- Updates model names to prefix with `snapchat_ads`
 ## 🎉 Feature Enhancements 🎉
 - Adds the `ad_squad_hourly_report` and `campaign_hourly_report` source tables and accompanying staging models
 - Adds the field descriptions and grain uniqueness tests for the new models 
@@ -8,10 +12,6 @@ PR [#13](https://github.com/fivetran/dbt_snapchat_ads_source/pull/13) applies th
 - Introduces the identifier variable for all source models
 - Casts all timestamp fields using dbt_utils.type_timestamp()
 - Introduces metric passthrough capability
-
-## 🚨 Breaking Changes 🚨
-- Changes `snapchat_schema` and `snapchat_database` variable names to `snapchat_ads_schema` and `snapchat_ads_database` 
-- Updates model names to prefix with `snapchat_ads`
 
 # dbt_snapchat_ads_source v0.3.1
 ## Bug Fixes
