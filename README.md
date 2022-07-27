@@ -45,12 +45,12 @@ packages:
 ## Step 3: Configure your variables
 
 ### Define database and schema variables
-By default, this package runs using your destination and the `snapchat_ads_source` schema. If this is not where your Snapchat Ads data is (for example, if your Snapchat Ads schema is named `snapchat_ads_fivetran`), add the following configuration to your root `dbt_project.yml` file:
+By default, this package runs using your destination and the `snapchat_ads_source` schema. If this is not where your Snapchat Ads data is (for example, if your Snapchat Ads schema is named `snapchat_ads_fivetran`), you would add the following configuration to your root `dbt_project.yml` file with your custom database and schema names:
 
 ```yml
 vars:
     snapchat_ads_database: your_destination_name
-    snapchat_ads_schema: snapchat_ads_fivetran 
+    snapchat_ads_schema: your_schema_name 
 ```
 
 ## (Optional) Step 4: Additional configurations
