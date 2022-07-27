@@ -18,7 +18,7 @@ fields as (
 ),
 
 final as (
-    
+
     select 
         id as ad_squad_id,
         name as ad_squad_name,
