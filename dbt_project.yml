@@ -15,6 +15,10 @@ vars:
     creative_history: "{{ source('snapchat_ads','creative_history') }}"
     creative_url_tag_history: "{{ source('snapchat_ads','creative_url_tag_history') }}"
 
+  snapchat_ads__ad_hourly_passthrough_metrics: []
+  snapchat_ads__ad_squad_hourly_passthrough_metrics: []
+  snapchat_ads__campaign_hourly_report_passthrough_metrics: []
+
 models:
   snapchat_ads_source:
     +schema: snapchat_ads_source

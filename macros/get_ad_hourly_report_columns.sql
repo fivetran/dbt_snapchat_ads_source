@@ -22,6 +22,8 @@
     {"name": "view_time_millis", "datatype": dbt_utils.type_numeric()}
 ] %}
 
+{{ fivetran_utils.add_pass_through_columns(columns, var('snapchat_ads__ad_hourly_passthrough_metrics')) }}
+
 {{ return(columns) }}
 
 {% endmacro %}

@@ -44,10 +44,8 @@ final as (
         impressions,
         (spend / 1000000.0) as spend,
         swipes
-        
-        {% for metric in var('snapchat_ads__ad_hourly_passthrough_metrics', []) %}
-        , {{ metric }}
-        {% endfor %}
+
+        {{ fivetran_utils.fill_pass_through_columns('snapchat_ads__ad_hourly_passthrough_metrics') }}
     from fields
 )
 
