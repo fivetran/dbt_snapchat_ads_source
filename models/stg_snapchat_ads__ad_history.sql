@@ -26,17 +26,10 @@ final as (
         ad_squad_id,
         creative_id,
         cast (_fivetran_synced as {{ dbt_utils.type_timestamp() }}) as _fivetran_synced,
-        cast (updated_at as {{ dbt_utils.type_timestamp() }}) as updated_at
-    from fields
-),
-
-most_recent as (
-
-    select 
-        *,
+        cast (updated_at as {{ dbt_utils.type_timestamp() }}) as updated_at,
         row_number() over (partition by ad_id order by _fivetran_synced desc) = 1 as is_most_recent_record
-    from final
+    from fields
 )
 
 select * 
-from most_recent
+from final
