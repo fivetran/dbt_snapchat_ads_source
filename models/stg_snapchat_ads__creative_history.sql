@@ -25,9 +25,8 @@ final as (
         ad_account_id,
         name as creative_name,
         web_view_url as url,
-        cast (_fivetran_synced as {{ dbt_utils.type_timestamp() }}) as _fivetran_synced,
         cast (updated_at as {{ dbt_utils.type_timestamp() }}) as updated_at,
-        row_number() over (partition by creative_id order by _fivetran_synced desc) =1 as is_most_recent_record
+        row_number() over (partition by creative_id order by updated_at desc) =1 as is_most_recent_record
     from fields
 )
 

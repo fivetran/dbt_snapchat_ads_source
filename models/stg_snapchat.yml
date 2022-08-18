@@ -7,12 +7,8 @@ models:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
             - ad_account_id
-            - _fivetran_synced 
+            - updated_at 
     columns:
-      - name: _fivetran_synced
-        description: "{{ doc('_fivetran_synced') }}"
-        tests:
-          - not_null
       - name: ad_account_id
         description: The ID of the account in Snapchat.
         tests:
@@ -38,12 +34,8 @@ models:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
             - ad_id
-            - _fivetran_synced 
+            - updated_at 
     columns:
-      - name: _fivetran_synced
-        description: "{{ doc('_fivetran_synced') }}"
-        tests:
-          - not_null
       - name: ad_id
         description: The ID of the ad in Snapchat.
         tests:
@@ -118,12 +110,8 @@ models:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
             - ad_squad_id
-            - _fivetran_synced
+            - updated_at 
     columns:
-      - name: _fivetran_synced
-        description: "{{ doc('_fivetran_synced') }}"
-        tests:
-          - not_null
       - name: ad_squad_id
         description: The ID of the ad squad in Snapchat.
         tests:
@@ -196,12 +184,8 @@ models:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
             - campaign_id
-            - _fivetran_synced
+            - updated_at 
     columns:
-      - name: _fivetran_synced
-        description: "{{ doc('_fivetran_synced') }}"
-        tests:
-          - not_null
       - name: campaign_id
         description: The id of the campaign in Snapchat.
         tests:
@@ -274,12 +258,8 @@ models:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
             - creative_id
-            - _fivetran_synced
+            - updated_at 
     columns:
-      - name: _fivetran_synced
-        description: "{{ doc('_fivetran_synced') }}"
-        tests:
-          - not_null
       - name: creative_id
         description: The ID of the creative in Snapchat.
         tests:
@@ -316,7 +296,5 @@ models:
         description: The URL parameter value, i.e. Snapchat.
       - name: updated_at
         description: Timestamp of when the record was updated.
-        tests:
-          - not_null
       - name: is_most_recent_record
         description: "{{ doc('is_most_recent_record') }}"
