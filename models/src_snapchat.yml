@@ -14,6 +14,8 @@ sources:
     tables:
       - name: ad_account_history
         identifier: "{{ var('snapchat_ads_ad_account_history_identifier', 'ad_account_history') }}"
+        config:
+          enabled: "{{ var('ad_reporting__snapchat_ads_enabled', true) }}"
         description: Each record in this table represents a historic version of an ad account in Snapchat.
         columns:
           - name: _fivetran_synced
@@ -33,6 +35,8 @@ sources:
 
       - name: ad_history
         identifier: "{{ var('snapchat_ads_ad_history_identifier', 'ad_history') }}"
+        config:
+          enabled: "{{ var('ad_reporting__snapchat_ads_enabled', true) }}"
         description: Each record in this table represents a historic version of an ad in Snapchat.
         columns:
           - name: _fivetran_synced
@@ -50,6 +54,8 @@ sources:
 
       - name: ad_hourly_report
         identifier: "{{ var('snapchat_ads_ad_hourly_report_identifier', 'ad_hourly_report') }}"
+        config:
+          enabled: "{{ var('ad_reporting__snapchat_ads_enabled', true) }}"
         description: Each record represents an hourly performance summary for an ad in Snapchat.
         columns:
           - name: ad_id
@@ -93,6 +99,8 @@ sources:
 
       - name: ad_squad_history
         identifier: "{{ var('snapchat_ads_ad_squad_history_identifier', 'ad_squad_history') }}"
+        config:
+          enabled: "{{ var('ad_reporting__snapchat_ads_enabled', true) }}"
         description: Each record in this table represents a historic version of an ad squad in Snapchat.
         columns:
           - name: _fivetran_synced
@@ -108,6 +116,8 @@ sources:
 
       - name: ad_squad_hourly_report
         identifier: "{{ var('snapchat_ads_ad_squad_hourly_report_identifier', 'ad_squad_hourly_report') }}"
+        config:
+          enabled: "{{ var('ad_reporting__snapchat_ads_enabled', true) }}"
         description: Each record represents an hourly performance summary for each ad squad.
         columns:
           - name: ad_squad_id
@@ -151,6 +161,8 @@ sources:
 
       - name: campaign_history
         identifier: "{{ var('snapchat_ads_campaign_history_identifier', 'campaign_history') }}"
+        config:
+          enabled: "{{ var('ad_reporting__snapchat_ads_enabled', true) }}"
         description: Each record in this table represents a historic version of a campaign in Snapchat.
         columns:
           - name: _fivetran_synced
@@ -166,6 +178,8 @@ sources:
 
       - name: campaign_hourly_report
         identifier: "{{ var('snapchat_ads_campaign_hourly_report_identifier', 'campaign_hourly_report') }}"
+        config:
+          enabled: "{{ var('ad_reporting__snapchat_ads_enabled', true) }}"
         description: Each record represents an hourly performance summary for each campaign.
         columns:
           - name: campaign_id
@@ -209,6 +223,8 @@ sources:
 
       - name: creative_history
         identifier: "{{ var('snapchat_ads_creative_history_identifier', 'creative_history') }}"
+        config:
+          enabled: "{{ var('ad_reporting__snapchat_ads_enabled', true) }}"
         description: Each record in this table represents a historic version of a creative in Snapchat.
         columns:
           - name: _fivetran_synced
@@ -226,6 +242,8 @@ sources:
 
       - name: creative_url_tag_history
         identifier: "{{ var('snapchat_ads_creative_url_tag_history_identifier', 'creative_url_tag_history') }}"
+        config:
+          enabled: "{{ var('ad_reporting__snapchat_ads_enabled', true) }}"
         description: Each record in this table represents a URL parameter key-value pair for a creative in Snapchat.
         columns:
           - name: _fivetran_synced
