@@ -12,6 +12,7 @@ PR [#13](https://github.com/fivetran/dbt_snapchat_ads_source/pull/13) applies th
 - Introduces the identifier variable for all source models
 - Casts all timestamp fields using dbt_utils.type_timestamp()
 - Introduces metric passthrough capability
+- Add enable configs for this specific ad platform, for use in the Ad Reporting rollup package 
 
 # dbt_snapchat_ads_source v0.3.1
 ## Bug Fixes
