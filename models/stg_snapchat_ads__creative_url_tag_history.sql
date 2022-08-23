@@ -27,7 +27,7 @@ final as (
         key as param_key,
         value as param_value,
         cast (updated_at as {{ dbt_utils.type_timestamp() }}) as updated_at,
-        row_number() over (partition by creative_id, param_key order by updated_at desc) =1 as is_most_recent_record
+        row_number() over (partition by creative_id, key order by updated_at desc) =1 as is_most_recent_record
     from fields
 )
 
