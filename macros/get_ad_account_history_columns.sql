@@ -1,6 +1,7 @@
 {% macro get_ad_account_history_columns() %}
 
 {% set columns = [
+    {"name": "_fivetran_synced", "datatype": dbt_utils.type_timestamp()},
     {"name": "advertiser", "datatype": dbt_utils.type_string()},
     {"name": "created_at", "datatype": dbt_utils.type_timestamp()},
     {"name": "currency", "datatype": dbt_utils.type_string()},
