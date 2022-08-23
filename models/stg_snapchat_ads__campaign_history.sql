@@ -26,7 +26,7 @@ final as (
         cast (created_at as {{ dbt_utils.type_timestamp() }}) as created_at,
         name as campaign_name,
         cast (updated_at as {{ dbt_utils.type_timestamp() }}) as updated_at
-        row_number() over (partition by campaign_id order by updated_at desc) = 1 as is_most_recent_record
+        row_number() over (partition by id order by updated_at desc) = 1 as is_most_recent_record
     from fields
 )
 

@@ -27,7 +27,7 @@ final as (
         ad_squad_id,
         creative_id,
         cast (updated_at as {{ dbt_utils.type_timestamp() }}) as updated_at,
-        row_number() over (partition by ad_id order by updated_at desc) = 1 as is_most_recent_record
+        row_number() over (partition by id order by updated_at desc) = 1 as is_most_recent_record
     from fields
 )
 
