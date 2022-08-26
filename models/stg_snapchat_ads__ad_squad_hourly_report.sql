@@ -14,12 +14,7 @@ fields as (
                 source_columns=adapter.get_columns_in_relation(ref('stg_snapchat_ads__ad_squad_hourly_report_tmp')),
                 staging_columns=get_ad_squad_hourly_report_columns()
             )
-        }}
-        
-        {% for metric in var('snapchat_ads__ad_squad_hourly_passthrough_metrics', []) %}
-        , {{ metric }}
-        {% endfor %}
-        
+        }}        
     from base
 ),
 
@@ -47,6 +42,7 @@ final as (
         swipes
 
         {{ fivetran_utils.fill_pass_through_columns('snapchat_ads__ad_squad_hourly_passthrough_metrics') }}
+    
     from fields
 )
 
