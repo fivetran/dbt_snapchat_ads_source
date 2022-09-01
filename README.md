@@ -54,6 +54,8 @@ vars:
 ```
 
 ## (Optional) Step 4: Additional configurations
+<details><summary>Expand for configurations</summary>
+
 ### Passing Through Additional Metrics
 By default, this package will select `clicks`, `impressions`, and `cost` from the source reporting tables to store into the staging models. If you would like to pass through additional metrics to the staging models, add the below configurations to your `dbt_project.yml` file. These variables allow for the pass-through fields to be aliased (`alias`) if desired, but not required. Use the below format for declaring the respective pass-through variables:
 
@@ -89,10 +91,16 @@ models:
       +schema: my_new_schema_name # leave blank for just the target_schema
 ```
 
+</details>
+
 ## (Optional) Step 5: Orchestrate your models with Fivetran Transformations for dbt Core™
+
+<details><summary>Expand for more details</summary>
     
 Fivetran offers the ability for you to orchestrate your dbt project through [Fivetran Transformations for dbt Core™](https://fivetran.com/docs/transformations/dbt). Learn how to set up your project for orchestration through Fivetran in our [Transformations for dbt Core™ setup guides](https://fivetran.com/docs/transformations/dbt#setupguide).
     
+</details>
+
 # 🔍 Does this package have dependencies?
 This dbt package is dependent on the following dbt packages. Please be aware that these dependencies are installed by default within this package. For more information on the following packages, refer to the [dbt hub](https://hub.getdbt.com/) site.
 > IMPORTANT: If you have any of these dependent packages in your own `packages.yml` file, we highly recommend that you remove them from your root `packages.yml` to avoid package version conflicts.
@@ -104,7 +112,8 @@ packages:
     - package: dbt-labs/dbt_utils
       version: [">=0.8.0", "<0.9.0"]
 ```
-          
+</details>
+
 # 🙌 How is this package maintained and can I contribute?
 ## Package Maintenance
 The Fivetran team maintaining this package _only_ maintains the latest version of the package. We highly recommend that you stay consistent with the [latest version](https://hub.getdbt.com/fivetran/snapchat_ads_source/latest/) of the package and refer to the [CHANGELOG](https://github.com/fivetran/dbt_snapchat_ads_source/blob/main/CHANGELOG.md) and release notes for more information on changes across versions.
