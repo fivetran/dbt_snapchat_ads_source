@@ -1,5 +1,5 @@
 name: 'snapchat_ads_source'
-version: '0.3.1'
+version: '0.4.0'
 config-version: 2
 require-dbt-version: [">=1.0.0", "<2.0.0"]
 
@@ -9,13 +9,19 @@ vars:
     ad_history: "{{ source('snapchat_ads','ad_history') }}"
     ad_hourly_report: "{{ source('snapchat_ads','ad_hourly_report') }}"
     ad_squad_history: "{{ source('snapchat_ads','ad_squad_history') }}"
+    ad_squad_hourly_report: "{{ source('snapchat_ads','ad_squad_hourly_report') }}"
     campaign_history: "{{ source('snapchat_ads','campaign_history') }}"
+    campaign_hourly_report: "{{ source('snapchat_ads','campaign_hourly_report') }}"
     creative_history: "{{ source('snapchat_ads','creative_history') }}"
     creative_url_tag_history: "{{ source('snapchat_ads','creative_url_tag_history') }}"
 
+  snapchat_ads__ad_hourly_passthrough_metrics: []
+  snapchat_ads__ad_squad_hourly_passthrough_metrics: []
+  snapchat_ads__campaign_hourly_report_passthrough_metrics: []
+
 models:
   snapchat_ads_source:
-    +schema: stg_snapchat_ads
+    +schema: snapchat_ads_source
     +materialized: table
     tmp:
       +materialized: view

@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: stg_snapchat__ad_account_history
+  - name: stg_snapchat_ads__ad_account_history
     description: Each record in this table represents a historic version of an ad account in Snapchat.
     tests:
       - dbt_utils.unique_combination_of_columns:
@@ -11,14 +11,28 @@ models:
     columns:
       - name: _fivetran_synced
         description: "{{ doc('_fivetran_synced') }}"
+        tests:
+          - not_null
       - name: ad_account_id
         description: The ID of the account in Snapchat.
+        tests:
+          - not_null
       - name: ad_account_name
         description: The name of the account in Snapchat.
+      - name: advertiser
+        description: Name of advertiser
+      - name: currency
+        description: Currency used by account
+      - name: created_at
+        description: Created at timestamp
+      - name: updated_at
+        description: Timestamp of when the record was updated.
+      - name: timezone
+        description: Account timezone
       - name: is_most_recent_record
         description: "{{ doc('is_most_recent_record') }}"
 
-  - name: stg_snapchat__ad_history
+  - name: stg_snapchat_ads__ad_history
     description: Each record in this table represents a historic version of an ad in Snapchat.
     tests:
       - dbt_utils.unique_combination_of_columns:
@@ -28,18 +42,26 @@ models:
     columns:
       - name: _fivetran_synced
         description: "{{ doc('_fivetran_synced') }}"
+        tests:
+          - not_null
       - name: ad_id
         description: The ID of the ad in Snapchat.
+        tests:
+          - not_null
       - name: ad_squad_id
         description: The ID of the related ad squad in Snapchat.
       - name: creative_id
         description: The ID of the related creative in Snapchat.
       - name: ad_name
         description: The name of the ad in Snapchat.
+      - name: created_at
+        description: Created at timestamp
+      - name: updated_at
+        description: Timestamp of when the record was updated.
       - name: is_most_recent_record
         description: "{{ doc('is_most_recent_record') }}"
 
-  - name: stg_snapchat__ad_hourly_report
+  - name: stg_snapchat_ads__ad_hourly_report
     description: Each record represents an hourly performance summary for an ad in Snapchat.
     tests:
       - dbt_utils.unique_combination_of_columns:
@@ -49,8 +71,40 @@ models:
     columns:
       - name: ad_id
         description: The ID of the ad that the report relates to in Snapchat.
+        tests:
+          - not_null
       - name: date_hour
         description: The hour that the report relates to.
+        tests:
+          - not_null
+      - name: attachment_quartile_1
+        description: Number of times your Long Form Video was viewed to 25% 
+      - name: attachment_quartile_2
+        description: Number of times your Long Form Video was viewed to 50% 
+      - name: attachment_quartile_3
+        description: Number of times your Long Form Video was viewed to 75% 
+      - name: attachment_total_view_time
+        description: Total time Snapchatters spent on the attachment (HH:MM:SS)
+      - name: attachment_view_completion
+        description: The number of times your Long Form Video was viewed to completion (97% )
+      - name: quartile_1
+        description: The number of times your video ad was viewed to 25% 
+      - name: quartile_2
+        description: The number of times your video ad was viewed to 50% 
+      - name: quartile_3
+        description: The number of times your video ad was viewed to 75% 
+      - name: saves
+        description: Number of times a lens/filter was saved to Memories
+      - name: shares
+        description: Number of times a lens/filter was shared in a Chat or Story
+      - name: screen_time
+        description: The number of milli seconds spent watching your ad across all paid impressions. Screen time starts recording as soon as the media is fully rendered on the device and the autoplay video starts
+      - name: video_views
+        description: The number of times your video was watched at least 2 seconds or swiped up, whichever comes first
+      - name: view_completion
+        description: The number of times your video ad was viewed to completion (97% )
+      - name: view_time
+        description: The number of milli seconds spent watching your ad across all users reached.
       - name: impressions
         description: The number of impressions for an ad in the hour of the record.
       - name: spend
@@ -58,7 +112,7 @@ models:
       - name: swipes
         description: The number of swipes for an ad in the hour of the record.
 
-  - name: stg_snapchat__ad_squad_history
+  - name: stg_snapchat_ads__ad_squad_history
     description: Each record in this table represents a historic version of an ad squad in Snapchat.
     tests:
       - dbt_utils.unique_combination_of_columns:
@@ -68,56 +122,182 @@ models:
     columns:
       - name: _fivetran_synced
         description: "{{ doc('_fivetran_synced') }}"
+        tests:
+          - not_null
       - name: ad_squad_id
-        description: The ID fo the ad squad in Snapchat.
-      - name: campaign_id
-        description: The ID of the related campaign in Snapchat.
+        description: The ID of the ad squad in Snapchat.
+        tests:
+          - not_null
       - name: ad_squad_name
         description: The name of the ad squad in Snapchat.
+      - name: created_at
+        description: Created at timestamp.
+      - name: updated_at
+        description: Timestamp of when the record was updated.
+      - name: campaign_id
+        description: The ID of the related campaign in Snapchat.
       - name: is_most_recent_record
         description: "{{ doc('is_most_recent_record') }}"
 
-  - name: stg_snapchat__campaign_history
+  - name: stg_snapchat_ads__ad_squad_hourly_report
+    description: Each record in this table represents a historic version of an ad in Snapchat.
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - ad_squad_id
+            - date_hour 
+    columns:
+      - name: ad_squad_id
+        description: ID of the ad squad.
+        tests:
+          - not_null
+      - name: date_hour
+        description: The hour that the report relates to.
+        tests:
+          - not_null
+      - name: attachment_quartile_1
+        description: Number of times your Long Form Video was viewed to 25% 
+      - name: attachment_quartile_2
+        description: Number of times your Long Form Video was viewed to 50% 
+      - name: attachment_quartile_3
+        description: Number of times your Long Form Video was viewed to 75% 
+      - name: attachment_total_view_time
+        description: Total time Snapchatters spent on the attachment (HH:MM:SS)
+      - name: attachment_view_completion
+        description: The number of times your Long Form Video was viewed to completion (97% )
+      - name: quartile_1
+        description: The number of times your video ad was viewed to 25% 
+      - name: quartile_2
+        description: The number of times your video ad was viewed to 50% 
+      - name: quartile_3
+        description: The number of times your video ad was viewed to 75% 
+      - name: saves
+        description: Number of times a lens/filter was saved to Memories
+      - name: shares
+        description: Number of times a lens/filter was shared in a Chat or Story
+      - name: screen_time
+        description: The number of milli seconds spent watching your ad across all paid impressions. Screen time starts recording as soon as the media is fully rendered on the device and the autoplay video starts
+      - name: video_views
+        description: The number of times your video was watched at least 2 seconds or swiped up, whichever comes first
+      - name: view_completion
+        description: The number of times your video ad was viewed to completion (97% )
+      - name: view_time
+        description: The number of milli seconds spent watching your ad across all users reached.
+      - name: impressions
+        description: The number of impressions for an ad in the hour of the record.
+      - name: spend
+        description: The amount of spend for an ad in the hour of the record.
+      - name: swipes
+        description: The number of swipes for an ad in the hour of the record. Swipes are when your ad was swiped up on or the CTA was tapped to view the attachment below.
+
+  - name: stg_snapchat_ads__campaign_history
     description: Each record in this table represents a historic version of a campaign in Snapchat.
     tests:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
             - campaign_id
-            - _fivetran_synced
+            - _fivetran_synced 
     columns:
       - name: _fivetran_synced
         description: "{{ doc('_fivetran_synced') }}"
+        tests:
+          - not_null
       - name: campaign_id
+        description: The id of the campaign in Snapchat.
+        tests:
+          - not_null
+      - name: campaign_name
         description: The name of the campaign in Snapchat.
       - name: ad_account_id
         description: The ID of the related ad account in Snapchat.
-      - name: campaign_name
-        description: The name of the campaign in Snapchat.
+      - name: created_at
+        description: Created at timestamp.
+      - name: updated_at
+        description: Timestamp of when the record was updated.
       - name: is_most_recent_record
         description: "{{ doc('is_most_recent_record') }}"
 
-  - name: stg_snapchat__creative_history
+  - name: stg_snapchat_ads__campaign_hourly_report
+    description: Each record in this table represents a historic version of an ad in Snapchat.
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - campaign_id
+            - date_hour 
+    columns:
+      - name: campaign_id
+        description: ID of campaign
+        tests:
+          - not_null
+      - name: date_hour
+        description: The hour that the report relates to.
+        tests:
+          - not_null
+      - name: attachment_quartile_1
+        description: Number of times your Long Form Video was viewed to 25% 
+      - name: attachment_quartile_2
+        description: Number of times your Long Form Video was viewed to 50% 
+      - name: attachment_quartile_3
+        description: Number of times your Long Form Video was viewed to 75% 
+      - name: attachment_total_view_time
+        description: Total time Snapchatters spent on the attachment (HH:MM:SS)
+      - name: attachment_view_completion
+        description: The number of times your Long Form Video was viewed to completion (97% )
+      - name: quartile_1
+        description: The number of times your video ad was viewed to 25% 
+      - name: quartile_2
+        description: The number of times your video ad was viewed to 50% 
+      - name: quartile_3
+        description: The number of times your video ad was viewed to 75% 
+      - name: saves
+        description: Number of times a lens/filter was saved to Memories
+      - name: shares
+        description: Number of times a lens/filter was shared in a Chat or Story
+      - name: screen_time
+        description: The number of milli seconds spent watching your ad across all paid impressions. Screen time starts recording as soon as the media is fully rendered on the device and the autoplay video starts
+      - name: video_views
+        description: The number of times your video was watched at least 2 seconds or swiped up, whichever comes first
+      - name: view_completion
+        description: The number of times your video ad was viewed to completion (97% )
+      - name: view_time
+        description: The number of milli seconds spent watching your ad across all users reached.
+      - name: impressions
+        description: The number of impressions for an ad in the hour of the record.
+      - name: spend
+        description: The amount of spend for an ad in the hour of the record.
+      - name: swipes
+        description: The number of swipes for an ad in the hour of the record. Swipes are when your ad was swiped up on or the CTA was tapped to view the attachment below.
+
+  - name: stg_snapchat_ads__creative_history
     description: Each record in this table represents a historic version of a creative in Snapchat.
     tests:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
             - creative_id
-            - _fivetran_synced
+            - _fivetran_synced 
     columns:
       - name: _fivetran_synced
         description: "{{ doc('_fivetran_synced') }}"
-      - name: creatve_id
+        tests:
+          - not_null
+      - name: creative_id
         description: The ID of the creative in Snapchat.
-      - name: ad_account_id
-        description: The ID of the related ad account in Snapchat.
+        tests:
+          - not_null
       - name: creative_name
         description: The name of the creative in Snapchat.
+      - name: ad_account_id
+        description: The ID of the related ad account in Snapchat.
       - name: url
         description: The URL of the creative if the creative is of type 'web view'.
+      - name: created_at
+        description: Created at timestamp.
+      - name: updated_at
+        description: Timestamp of when the record was updated.
       - name: is_most_recent_record
         description: "{{ doc('is_most_recent_record') }}"
 
-  - name: stg_snapchat__creative_url_tag_history
+  - name: stg_snapchat_ads__creative_url_tag_history
     description: Each record in this table represents a URL paramter key-value pair for a creative in Snapchat.
     tests:
       - dbt_utils.unique_combination_of_columns:
@@ -128,9 +308,13 @@ models:
     columns:
       - name: creative_id
         description: The ID of the related creative in Snapchat.
+        tests:
+          - not_null
       - name: param_key
         description: The URL parameter key, i.e. UTM_SOURCE.
       - name: param_value
         description: The URL parameter value, i.e. Snapchat.
       - name: updated_at
         description: Timestamp of when the record was updated.
+      - name: is_most_recent_record
+        description: "{{ doc('is_most_recent_record') }}"

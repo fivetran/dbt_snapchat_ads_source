@@ -7,10 +7,6 @@
     {"name": "creative_id", "datatype": dbt_utils.type_string()},
     {"name": "id", "datatype": dbt_utils.type_string()},
     {"name": "name", "datatype": dbt_utils.type_string()},
-    {"name": "review_status", "datatype": dbt_utils.type_string()},
-    {"name": "review_status_reason", "datatype": dbt_utils.type_string()},
-    {"name": "status", "datatype": dbt_utils.type_string()},
-    {"name": "type", "datatype": dbt_utils.type_string()},
     {"name": "updated_at", "datatype": dbt_utils.type_timestamp()}
 ] %}
 
