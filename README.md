@@ -40,7 +40,7 @@ Include the following snapchat_ads_source package version in your `packages.yml`
 ```yaml
 packages:
   - package: fivetran/snapchat_ads_source
-    version: [">=0.4.0", "<0.5.0"]
+    version: [">=0.5.0", "<0.6.0"]
 ```
 ## Step 3: Configure your variables
 
@@ -107,10 +107,10 @@ This dbt package is dependent on the following dbt packages. Please be aware tha
 ```yml
 packages:
     - package: fivetran/fivetran_utils
-      version: [">=0.3.0", "<0.4.0"]
+      version: [">=0.4.0", "<0.5.0"]
 
     - package: dbt-labs/dbt_utils
-      version: [">=0.8.0", "<0.9.0"]
+      version: [">=1.0.0", "<2.0.0"]
 ```
 </details>
 
