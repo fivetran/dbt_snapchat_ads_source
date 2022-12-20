@@ -23,10 +23,10 @@ final as (
     select
         id as campaign_id,
         ad_account_id,
-        cast (created_at as {{ dbt_utils.type_timestamp() }}) as created_at,
+        cast (created_at as {{ dbt.type_timestamp() }}) as created_at,
         name as campaign_name,
-        cast (_fivetran_synced as {{ dbt_utils.type_timestamp() }}) as _fivetran_synced,
-        cast (updated_at as {{ dbt_utils.type_timestamp() }}) as updated_at,
+        cast (_fivetran_synced as {{ dbt.type_timestamp() }}) as _fivetran_synced,
+        cast (updated_at as {{ dbt.type_timestamp() }}) as updated_at,
         row_number() over (partition by id order by _fivetran_synced desc) = 1 as is_most_recent_record
     from fields
 )

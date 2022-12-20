@@ -22,7 +22,7 @@ final as (
     
     select 
         ad_id,
-        cast (date as {{ dbt_utils.type_timestamp() }}) as date_hour,
+        cast (date as {{ dbt.type_timestamp() }}) as date_hour,
         attachment_quartile_1,
         attachment_quartile_2,
         attachment_quartile_3,
