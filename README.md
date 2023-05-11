@@ -34,13 +34,13 @@ dispatch:
     search_order: ['spark_utils', 'dbt_utils']
 ```
 
-## Step 2: Install the package
-Include the following snapchat_ads_source package version in your `packages.yml` file.
+## Step 2: Install the package (skip if also using the `snapchat_ads` transformation package)
+If you  are **not** using the [Snapchat Ads transformation package](https://github.com/fivetran/dbt_snapchat_ads), include the following package version in your `packages.yml` file. If you are installing the transform package, the source package is automatically installed as a dependency.
 > TIP: Check [dbt Hub](https://hub.getdbt.com/) for the latest installation instructions or [read the dbt docs](https://docs.getdbt.com/docs/package-management) for more information on installing packages.
 ```yaml
 packages:
   - package: fivetran/snapchat_ads_source
-    version: [">=0.5.0", "<0.6.0"]
+    version: [">=0.5.0", "<0.6.0"] # we recommend using ranges to capture non-breaking changes automatically
 ```
 ## Step 3: Configure your variables
 
@@ -115,7 +115,6 @@ packages:
     - package: dbt-labs/spark_utils
       version: [">=0.3.0", "<0.4.0"]
 ```
-</details>
 
 # 🙌 How is this package maintained and can I contribute?
 ## Package Maintenance

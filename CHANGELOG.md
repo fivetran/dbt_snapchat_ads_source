@@ -1,3 +1,9 @@
+# dbt_snapchat_ads_source v0.UPDATE.UPDATE
+
+## Under the Hood:
+- Incorporated the new `fivetran_utils.drop_schemas_automation` macro into the end of each Buildkite integration test job. ([#17](https://github.com/fivetran/dbt_snapchat_ads_source/pull/17))
+- Updated the pull request [templates](/.github). ([#17](https://github.com/fivetran/dbt_snapchat_ads_source/pull/17))
+
 # dbt_snapchat_ads_source v0.5.0
 ## 🚨 Breaking Changes 🚨:
 [PR #15](https://github.com/fivetran/dbt_snapchat_ads_source/pull/15) includes the following breaking changes:
