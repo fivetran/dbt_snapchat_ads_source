@@ -1,3 +1,5 @@
+ADD source_relation WHERE NEEDED + CHECK JOINS AND WINDOW FUNCTIONS! (Delete this line when done.)
+
 {{ config(enabled=var('ad_reporting__snapchat_ads_enabled', true)) }}
 
 with base as (
@@ -15,12 +17,19 @@ fields as (
                 staging_columns=get_ad_squad_hourly_report_columns()
             )
         }}        
+    
+        {{ fivetran_utils.source_relation(
+            union_schema_variable='snapchat_ads_union_schemas', 
+            union_database_variable='snapchat_ads_union_databases') 
+        }}
+
     from base
 ),
 
 final as (
-    
-    select 
+
+    select
+        source_relation, 
         ad_squad_id,
         cast (date as {{ dbt.type_timestamp() }}) as date_hour,
         attachment_quartile_1,
