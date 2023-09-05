@@ -40,7 +40,7 @@ If you  are **not** using the [Snapchat Ads transformation package](https://gith
 ```yaml
 packages:
   - package: fivetran/snapchat_ads_source
-    version: [">=0.5.0", "<0.6.0"] # we recommend using ranges to capture non-breaking changes automatically
+    version: [">=0.6.0", "<0.7.0"] # we recommend using ranges to capture non-breaking changes automatically
 ```
 ## Step 3: Configure your variables
 

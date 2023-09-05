@@ -1,7 +1,7 @@
 version: 2
 
 sources:
-  - name: snapchat_ads
+  - name: snapchat_ads  # This source will only be used if you are using a single tiktok_ads source connector. If multiple sources are being unioned, their tables will be directly referenced via adapter.get_relation.
     schema: "{{ var('snapchat_ads_schema', 'snapchat_ads') }}"
     database: "{% if target.type != 'spark'%}{{ var('snapchat_ads_database', target.database) }}{% endif %}"
     loader: Fivetran
