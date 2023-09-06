@@ -8,11 +8,9 @@
 - To distinguish which source each field comes from, added `source_relation` column in each staging model and applied the `fivetran_utils.source_relation` macro.
 - Updated tests to account for the new `source_relation` column.
 
-# dbt_snapchat_ads_source v0.UPDATE.UPDATE
-
-## Under the Hood:
-- Incorporated the new `fivetran_utils.drop_schemas_automation` macro into the end of each Buildkite integration test job. ([#17](https://github.com/fivetran/dbt_snapchat_ads_source/pull/17))
-- Updated the pull request [templates](/.github). ([#17](https://github.com/fivetran/dbt_snapchat_ads_source/pull/17))
+[PR #17](https://github.com/fivetran/dbt_snapchat_ads_source/pull/17) includes the following updates:
+- Incorporated the new `fivetran_utils.drop_schemas_automation` macro into the end of each Buildkite integration test job.
+- Updated the pull request [templates](/.github).
 
 # dbt_snapchat_ads_source v0.5.0
 ## 🚨 Breaking Changes 🚨:
