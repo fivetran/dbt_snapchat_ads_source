@@ -7,7 +7,7 @@
         schema_variable='snapchat_ads_schema', 
         default_database=target.database,
         default_schema='snapchat_ads',
-        default_variable='creative_url_tag_history_source',
+        default_variable='creative_url_tag_history',
         union_schema_variable='snapchat_ads_union_schemas',
         union_database_variable='snapchat_ads_union_databases'
     )

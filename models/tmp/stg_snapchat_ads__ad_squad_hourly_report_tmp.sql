@@ -7,7 +7,7 @@
         schema_variable='snapchat_ads_schema', 
         default_database=target.database,
         default_schema='snapchat_ads',
-        default_variable='ad_squad_hourly_report_source',
+        default_variable='ad_squad_hourly_report',
         union_schema_variable='snapchat_ads_union_schemas',
         union_database_variable='snapchat_ads_union_databases'
     )
