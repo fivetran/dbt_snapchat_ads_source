@@ -15,12 +15,19 @@ fields as (
                 staging_columns=get_creative_history_columns()
             )
         }}
+    
+        {{ fivetran_utils.source_relation(
+            union_schema_variable='snapchat_ads_union_schemas', 
+            union_database_variable='snapchat_ads_union_databases') 
+        }}
+
     from base
 ),
 
 final as (
-    
-    select 
+
+    select
+        source_relation, 
         id as creative_id,
         cast (created_at as {{ dbt.type_timestamp() }}) as created_at,
         ad_account_id,
@@ -28,7 +35,7 @@ final as (
         web_view_url as url,
         cast (_fivetran_synced as {{ dbt.type_timestamp() }}) as _fivetran_synced,
         cast (updated_at as {{ dbt.type_timestamp() }}) as updated_at,
-        row_number() over (partition by id order by _fivetran_synced desc) =1 as is_most_recent_record
+        row_number() over (partition by source_relation, id order by _fivetran_synced desc) =1 as is_most_recent_record
     from fields
 )
 

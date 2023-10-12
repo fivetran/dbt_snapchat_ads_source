@@ -17,17 +17,24 @@ fields as (
             )
         }}
         
+    
+        {{ fivetran_utils.source_relation(
+            union_schema_variable='snapchat_ads_union_schemas', 
+            union_database_variable='snapchat_ads_union_databases') 
+        }}
+
     from base
 ),
 
 final as (
-    
-    select  
+
+    select
+        source_relation,  
         creative_id,
         key as param_key,
         value as param_value,
         cast (updated_at as {{ dbt.type_timestamp() }}) as updated_at,
-        row_number() over (partition by creative_id, key order by updated_at desc) =1 as is_most_recent_record
+        row_number() over (partition by source_relation, creative_id, key order by updated_at desc) =1 as is_most_recent_record
     from fields
 )
 
