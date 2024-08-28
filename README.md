@@ -13,9 +13,9 @@
 # Snapchat Ads Source dbt Package ([Docs](https://fivetran.github.io/dbt_snapchat_ads_source/))
 ## What does this dbt package do?
 - Materializes [Snapchat Ads staging tables](https://fivetran.github.io/dbt_snapchat_ads_source/#!/overview/snapchat_ads_source/models/?g_v=1) which leverage data in the format described by [this ERD](https://fivetran.com/docs/applications/snapchat-ads/#schemainformation). These staging tables clean, test, and prepare your Snapchat Ads data from [Fivetran's connector](https://fivetran.com/docs/applications/snapchat-ads) for analysis by doing the following:
-- Name columns for consistency across all packages and for easier analysis
-- Adds freshness tests to source data
-- Adds column-level testing where applicable. For example, all primary keys are tested for uniqueness and non-null values.
+  - Name columns for consistency across all packages and for easier analysis
+  - Adds freshness tests to source data
+  - Adds column-level testing where applicable. For example, all primary keys are tested for uniqueness and non-null values.
 - Generates a comprehensive data dictionary of your Snapchat Ads data through the [dbt docs site](https://fivetran.github.io/dbt_snapchat_ads_source/).
 - These tables are designed to work simultaneously with our [Snapchat Ads transformation package](https://github.com/fivetran/dbt_snapchat_ads).
     - Refer to our [Docs site](https://fivetran.github.io/dbt_snapchat_ads_source/#!/overview/salesforce_source/models/?g_v=1) for more details about these materialized models. 
