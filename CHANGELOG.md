@@ -7,15 +7,15 @@ We have added more robust support for conversions in our data models by doing th
 - Created a `snapchat_ads__conversion_fields` variable to pass through additional conversion metrics in the `stg_snapchat_ads__ad_hourly_report`,`stg_snapchat_ads__ad_squad_hourly_report` and `stg_snapchat_ads__campaign_hourly_report` models.
   - Set variable defaults in the `dbt_project.yml` to bring in the most used conversion field `conversion_purchases`.
 - Ensured backwards compatibility with existing passthrough column variables in these models by creating `snapchat_ads_add_pass_through_columns` and `snapchat_ads_fill_pass_through_columns` macro checks for whether these fields already are brought in by the existing passthrough variables. This ensures there are no duplicate column errors if both the new conversion variable and the old passthrough variable are leveraged in either `stg_snapchat_ads__*_hourly_report*` data model.  
-- Brought in the `conversion_purchases_value` field to the above mentioned  `stg_snapchat_ads__*_hourly_report*` model
-> The above new field additions are 🚨 **breaking changes** 🚨 for users who were not already bringing in conversion fields via passthrough columns.
+- Brought in the `conversion_purchases_value` field to the above mentioned  `stg_snapchat_ads__*_hourly_report` models.
+> **IMPORTANT**: The above new field additions are **breaking changes** for users who were not already bringing in conversion fields via passthrough columns.
 
 ## Documentation Update 
 - Documents the ability to transform metrics provided to the `snapchat_ads__conversion_fields` variable [in the README](https://github.com/fivetran/dbt_snapchat_ads_source/blob/main/README.md#adding-in-conversion-fields-variable).
 - Added new metrics to `src` and `stg` yml files.
 
 ## Under the Hood
-- Updated `snapchat_*_hourly_report_data` seed file with relevant conversion fields for more robust testing. 
+- Updated `snapchat_*_hourly_report_data` seed files with relevant conversion fields for more robust testing. 
 
 ## Contributors
 - [Seer Interactive](https://www.seerinteractive.com/?utm_campaign=Fivetran%20%7C%20Models&utm_source=Fivetran&utm_medium=Fivetran%20Documentation)

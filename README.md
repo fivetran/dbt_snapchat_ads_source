@@ -69,8 +69,6 @@ To connect your multiple schema/database sources to the package models, follow t
 #### Passing Through Additional Metrics
 By default, this package will select `clicks`, `impressions`, `cost` and `conversion_purchases_value` from the source reporting tables to store into the staging models. If you would like to pass through additional metrics to the staging models, add the below configurations to your `dbt_project.yml` file. These variables allow for the pass-through fields to be aliased (`alias`) if desired, but not required. Use the below format for declaring the respective pass-through variables:
 
-> IMPORTANT: Make sure to exercise due diligence when adding metrics to these models. The metrics added by default (taps, impressions, and spend) have been vetted by the Fivetran team, maintaining this package for accuracy. There are metrics included within the source reports, such as metric averages, which may be inaccurately represented at the grain for reports created in this package. You must ensure that whichever metrics you pass through are appropriate to aggregate at the respective reporting levels in this package.
-
 ```yml
 vars:
     snapchat_ads__ad_hourly_passthrough_metrics: 
@@ -88,17 +86,13 @@ vars:
         alias: "field_id"
 ```
 
-#### Change the source table references
-If an individual source table has a different name than the package expects, add the table name as it appears in your destination to the respective variable:
-> IMPORTANT: See this project's [`dbt_project.yml`](https://github.com/fivetran/dbt_snapchat_ads_source/blob/main/dbt_project.yml) variable declarations to see the expected names.
-    
-```yml
-vars:
-    snapchat_ads_<default_source_table_name>_identifier: your_table_name 
-```
+> **Note**: Make sure to exercise due diligence when adding metrics to these models. The metrics added by default (swipes, impressions, and spend) have been vetted by the Fivetran team, maintaining this package for accuracy. There are metrics included within the source reports, such as metric averages, which may be inaccurately represented at the grain for reports created in this package. You must ensure that whichever metrics you pass through are appropriate to aggregate at the respective reporting levels in this package.
+
+**Important**: You do NOT need to add conversions in this way. See the following section for an alternative implementation.
+
 
 #### Adding in Conversion Fields Variable
-Separate from the above passthrough metrics, the package will also include conversion metrics based on the `snapchat_ads__conversion_fields` variable, in addition to the `conversion_value_in_local_currency` field.
+Separate from the above passthrough metrics, the package will also include conversion metrics based on the `snapchat_ads__conversion_fields` variable, in addition to the `conversion_purchases_value` field.
 
 By default, the data models consider `conversion_purchases` to be conversions. These should cover most use cases, but, say, if you would like to consider adding payment info, adding to wishlist, adding to the cart, etc. to *also* be conversions, you would apply the following configuration with the **original** source names of the conversion fields (not aliases you provided in the section above):
 
@@ -106,6 +100,19 @@ By default, the data models consider `conversion_purchases` to be conversions. T
 # dbt_project.yml
 vars:
     snapchat_ads__conversion_fields: ['conversion_purchases', 'conversion_add_billing', 'conversion_save', 'conversion_add_cart']
+```
+
+> We introduced support for conversion fields in our `*_hourly_report` data models in the [v0.7.0 release](https://github.com/fivetran/dbt_snapchat_ads_source/releases/tag/v0.7.0) of the package, but customers might have been bringing in these conversion fields earlier using the passthrough fields variables. The data models will avoid "duplicate column" errors automatically if this is the case. 
+
+#### Change the source table references
+If an individual source table has a different name than the package expects, add the table name as it appears in your destination to the respective variable. This is not available when running the package on multiple unioned connectors.
+
+> IMPORTANT: See this project's [`dbt_project.yml`](https://github.com/fivetran/dbt_snapchat_ads_source/blob/main/dbt_project.yml) variable declarations to see the expected names.
+    
+```yml
+vars:
+    snapchat_ads_<default_source_table_name>_identifier: your_table_name 
+```
 
 #### Change the build schema
 By default, this package builds the Snapchat Ads staging models within a schema titled (`<target_schema>` + `_stg_snapchat_ads`) in your destination. If this is not where you would like your Snapchat Ads staging data to be written to, add the following configuration to your root `dbt_project.yml` file:
