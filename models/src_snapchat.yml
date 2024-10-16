@@ -93,6 +93,10 @@ sources:
             description: The amount of spend in microdollars for an ad in the hour of the record.
           - name: swipes
             description: The number of swipes for an ad in the hour of the record. Swipes are when your ad was swiped up on or the CTA was tapped to view the attachment below.
+          - name: conversion_purchases_value
+            description: The total value of purchases for an ad in the hour of the record.
+          - name: conversion_purchases
+            description: The total number of purchases for an ad in the hour of the record.
 
       - name: ad_squad_history
         identifier: "{{ var('snapchat_ads_ad_squad_history_identifier', 'ad_squad_history') }}"
@@ -151,6 +155,10 @@ sources:
             description: The amount of spend in microdollars for an ad in the hour of the record.
           - name: swipes
             description: The number of swipes for an ad in the hour of the record. Swipes are when your ad was swiped up on or the CTA was tapped to view the attachment below.
+          - name: conversion_purchases_value
+            description: The total value of purchases for an ad in the hour of the record.
+          - name: conversion_purchases
+            description: The total number of purchases for an ad in the hour of the record.
 
       - name: campaign_history
         identifier: "{{ var('snapchat_ads_campaign_history_identifier', 'campaign_history') }}"
@@ -209,6 +217,10 @@ sources:
             description: The amount of spend in microdollars for an ad in the hour of the record.
           - name: swipes
             description: The number of swipes for an ad in the hour of the record. Swipes are when your ad was swiped up on or the CTA was tapped to view the attachment below.
+          - name: conversion_purchases_value
+            description: The total value of purchases for an ad in the hour of the record.
+          - name: conversion_purchases
+            description: The total number of purchases for an ad in the hour of the record.
 
       - name: creative_history
         identifier: "{{ var('snapchat_ads_creative_history_identifier', 'creative_history') }}"
