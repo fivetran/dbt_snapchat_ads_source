@@ -35,7 +35,7 @@ dispatch:
 ```
 
 ### Step 2: Install the package (skip if also using the `snapchat_ads` transformation package or `ad_reporting` combination package)
-If you are **not** using the [Snapchat Ads transformation package](https://github.com/fivetran/dbt_snapchat_ads) and/or [Ad Reporting transformation package](https://github.com/fivetran/dbt_ad_reporting), include the following package version in your `packages.yml` file. If you are installing the transform package, the source package is automatically installed as a dependency.
+If you are **not** using the [Snapchat Ads transformation package](https://github.com/fivetran/dbt_snapchat_ads) and/or [Ad Reporting combination package](https://github.com/fivetran/dbt_ad_reporting), include the following package version in your `packages.yml` file. If you are installing the transform package, the source package is automatically installed as a dependency.
 > TIP: Check [dbt Hub](https://hub.getdbt.com/) for the latest installation instructions or [read the dbt docs](https://docs.getdbt.com/docs/package-management) for more information on installing packages.
 ```yaml
 packages:
@@ -69,7 +69,7 @@ vars:
 To connect your multiple schema/database sources to the package models, follow the steps outlined in the [Union Data Defined Sources Configuration](https://github.com/fivetran/dbt_fivetran_utils/tree/releases/v0.4.latest#union_data-source) section of the Fivetran Utils documentation for the union_data macro. This will ensure a proper configuration and correct visualization of connections in the DAG.
 
 #### Passing Through Additional Metrics
-By default, this package will select `clicks`, `impressions`, `cost`, `conversion_purchases_value`, and `conversion_purchases` (or whatever is specified by the `snapchat_ads__conversion_fields` variable) from the source reporting tables to store into the staging models. If you would like to pass through additional metrics to the staging models, add the below configurations to your `dbt_project.yml` file. These variables allow for the pass-through fields to be aliased (`alias`) if desired, but not required. Use the below format for declaring the respective pass-through variables:
+By default, this package will select `swipes`, `impressions`, `spend`, `conversion_purchases_value`, and `conversion_purchases` (or whichever fields are specified by the `snapchat_ads__conversion_fields` variable in the next section) from the source reporting tables to store into the staging models. If you would like to pass through additional metrics to the staging models, add the below configurations to your `dbt_project.yml` file. These variables allow for the pass-through fields to be aliased (`alias`) if desired, but not required. Use the below format for declaring the respective pass-through variables:
 
 ```yml
 vars:
@@ -88,7 +88,7 @@ vars:
         alias: "field_id"
 ```
 
-> **Note**: Make sure to exercise due diligence when adding metrics to these models. The metrics added by default (swipes, impressions, and spend) have been vetted by the Fivetran team, maintaining this package for accuracy. There are metrics included within the source reports, such as metric averages, which may be inaccurately represented at the grain for reports created in this package. You must ensure that whichever metrics you pass through are appropriate to aggregate at the respective reporting levels in this package.
+> **Note**: Make sure to exercise due diligence when adding metrics to these models. The metrics added by default (swipes, impressions, spend, and conversions) have been vetted by the Fivetran team, maintaining this package for accuracy. There are metrics included within the source reports, such as metric averages, which may be inaccurately represented at the grain for reports created in this package. You must ensure that whichever metrics you pass through are appropriate to aggregate at the respective reporting levels in this package.
 
 **Important**: You do NOT need to add conversions in this way. See the following section for an alternative implementation.
 

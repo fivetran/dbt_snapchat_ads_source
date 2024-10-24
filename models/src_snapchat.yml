@@ -111,6 +111,14 @@ sources:
             description: Total number of attributed "SEARCH" conversion events for an ad in the hour of the record.
           - name: conversion_view_content
             description: Total number of attributed "VIEW_CONTENT" conversion events for an ad in the hour of the record.
+          - name: conversion_app_opens
+            description: Total number of attributed "APP_OPEN" conversion events for an ad in the hour of the record.
+          - name: conversion_level_completes
+            description: Total number of attributed "LEVEL_COMPLETE" conversion events for an ad in the hour of the record.
+          - name: conversion_page_views
+            description: Total number of attributed "PAGE_VIEW" conversion events for an ad in the hour of the record.
+          - name: _fivetran_synced
+            description: "{{ doc('_fivetran_synced') }}"
 
       - name: ad_squad_history
         identifier: "{{ var('snapchat_ads_ad_squad_history_identifier', 'ad_squad_history') }}"
@@ -187,6 +195,14 @@ sources:
             description: Total number of attributed "SEARCH" conversion events for an ad in the hour of the record.
           - name: conversion_view_content
             description: Total number of attributed "VIEW_CONTENT" conversion events for an ad in the hour of the record.
+          - name: _fivetran_synced
+            description: "{{ doc('_fivetran_synced') }}"
+          - name: conversion_app_opens
+            description: Total number of attributed "APP_OPEN" conversion events for an ad in the hour of the record.
+          - name: conversion_level_completes
+            description: Total number of attributed "LEVEL_COMPLETE" conversion events for an ad in the hour of the record.
+          - name: conversion_page_views
+            description: Total number of attributed "PAGE_VIEW" conversion events for an ad in the hour of the record.
 
       - name: campaign_history
         identifier: "{{ var('snapchat_ads_campaign_history_identifier', 'campaign_history') }}"
@@ -263,7 +279,15 @@ sources:
             description: Total number of attributed "SEARCH" conversion events for an ad in the hour of the record.
           - name: conversion_view_content
             description: Total number of attributed "VIEW_CONTENT" conversion events for an ad in the hour of the record.
-
+          - name: _fivetran_synced
+            description: "{{ doc('_fivetran_synced') }}"
+          - name: conversion_app_opens
+            description: Total number of attributed "APP_OPEN" conversion events for an ad in the hour of the record.
+          - name: conversion_level_completes
+            description: Total number of attributed "LEVEL_COMPLETE" conversion events for an ad in the hour of the record.
+          - name: conversion_page_views
+            description: Total number of attributed "PAGE_VIEW" conversion events for an ad in the hour of the record.
+            
       - name: creative_history
         identifier: "{{ var('snapchat_ads_creative_history_identifier', 'creative_history') }}"
         description: Each record in this table represents a historic version of a creative in Snapchat.
