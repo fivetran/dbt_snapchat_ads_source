@@ -1,3 +1,25 @@
+# dbt_snapchat_ads_source v0.7.0
+[PR #24](https://github.com/fivetran/dbt_snapchat_ads_source/pull/24) includes the following **BREAKING CHANGE** updates:
+
+## Feature Updates: Conversion Support
+We have added more robust support for conversions in our data models by doing the following:
+
+- Created a `snapchat_ads__conversion_fields` variable to pass through additional conversion fields in the `stg_snapchat_ads__ad_hourly_report`,`stg_snapchat_ads__ad_squad_hourly_report` and `stg_snapchat_ads__campaign_hourly_report` models.
+  - By default, `snapchat_ads__conversion_fields` will bring in the most used conversion field, `conversion_purchases`. See the [README](https://github.com/fivetran/dbt_snapchat_ads_source/tree/main?tab=readme-ov-file#configuring-conversion-fields) for details on how to adjust this.
+- Brought in the `conversion_purchases_value` field to the above mentioned  `stg_snapchat_ads__*_hourly_report` models.
+> **IMPORTANT**: The above new field additions are **breaking changes** for users who were not already bringing in conversion fields via passthrough columns.
+
+## Documentation Update 
+- Documented how to use the new `snapchat_ads__conversion_fields` variable [here](https://github.com/fivetran/dbt_snapchat_ads_source/tree/main?tab=readme-ov-file#configuring-conversion-fields).
+- Added new metrics to `src` and `stg` yml files.
+
+## Under the Hood
+- Updated `snapchat_*_hourly_report_data` seed files with relevant conversion fields for more robust testing. 
+- Ensured backwards compatibility with existing passthrough column frameworks by creating `snapchat_ads_add_pass_through_columns` and `snapchat_ads_fill_pass_through_columns` macro checks for whether these conversion fields are already brought in by the existing [passthrough variables](https://github.com/fivetran/dbt_reddit_ads_source/tree/main?tab=readme-ov-file#passing-through-additional-metrics). This ensures there are no duplicate column errors if both the new conversion variable and the old passthrough variable are leveraged in any `stg_snapchat_ads__*_hourly_report*` data model.
+
+## Contributors
+- [Seer Interactive](https://www.seerinteractive.com/?utm_campaign=Fivetran%20%7C%20Models&utm_source=Fivetran&utm_medium=Fivetran%20Documentation)
+
 # dbt_snapchat_ads_source v0.6.0
 [PR #20](https://github.com/fivetran/dbt_snapchat_ads_source/pull/20) includes the following updates:
 ## Feature update 🎉
