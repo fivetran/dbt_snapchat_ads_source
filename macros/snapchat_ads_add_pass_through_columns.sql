@@ -7,7 +7,7 @@
 
         {% if column is mapping %}
         {% set col_name = column.alias|default(column.name)|lower %}
-
+        
             {% if col_name not in except_fields %}
                 {% if column.alias %}
                     {% do base_columns.append({ "name": column.name, "alias": column.alias, "datatype": column.datatype if column.datatype else dbt.type_string()}) %}

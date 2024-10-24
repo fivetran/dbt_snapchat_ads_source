@@ -1,13 +1,13 @@
 # dbt_snapchat_ads_source v0.7.0
-[PR #24](https://github.com/fivetran/dbt_snapchat_ads_source/pull/24) includes the following updates:
+[PR #24](https://github.com/fivetran/dbt_snapchat_ads_source/pull/24) includes the following **breaking change** updates:
 
-## Feature Updates: Conversion Support!
-We have added more robust support for conversions in our data models by doing the following: 
+## Feature Updates: Conversion Support
+We have added more robust support for conversions in our data models by doing the following:
 
 - Created a `snapchat_ads__conversion_fields` variable to pass through additional conversion metrics in the `stg_snapchat_ads__ad_hourly_report`,`stg_snapchat_ads__ad_squad_hourly_report` and `stg_snapchat_ads__campaign_hourly_report` models.
-  - Set variable defaults in the `dbt_project.yml` to bring in the most used conversion field `conversion_purchases`.
-- Ensured backwards compatibility with existing passthrough column variables in these models by creating `snapchat_ads_add_pass_through_columns` and `snapchat_ads_fill_pass_through_columns` macro checks for whether these fields already are brought in by the existing passthrough variables. This ensures there are no duplicate column errors if both the new conversion variable and the old passthrough variable are leveraged in either `stg_snapchat_ads__*_hourly_report*` data model.  
+  - Set variable defaults in the `dbt_project.yml` to bring in the most used conversion field, `conversion_purchases`. See the [README](https://github.com/fivetran/dbt_snapchat_ads_source/tree/main?tab=readme-ov-file#configuring-conversion-fields) for details on how to adjust this.
 - Brought in the `conversion_purchases_value` field to the above mentioned  `stg_snapchat_ads__*_hourly_report` models.
+- Ensured backwards compatibility with existing passthrough column variables in these models by creating `snapchat_ads_add_pass_through_columns` and `snapchat_ads_fill_pass_through_columns` macro checks for whether these fields already are brought in by the existing [passthrough variables](https://github.com/fivetran/dbt_reddit_ads_source/tree/main?tab=readme-ov-file#passing-through-additional-metrics). This ensures there are no duplicate column errors if both the new conversion variable and the old passthrough variable are leveraged in either `stg_snapchat_ads__*_hourly_report*` data model.
 > **IMPORTANT**: The above new field additions are **breaking changes** for users who were not already bringing in conversion fields via passthrough columns.
 
 ## Documentation Update 

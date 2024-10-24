@@ -94,9 +94,23 @@ sources:
           - name: swipes
             description: The number of swipes for an ad in the hour of the record. Swipes are when your ad was swiped up on or the CTA was tapped to view the attachment below.
           - name: conversion_purchases_value
-            description: The total value of purchases for an ad in the hour of the record.
+            description: The total value of purchases attributed to an ad in the hour of the record (microcurrency in Ad Account's currency).
           - name: conversion_purchases
-            description: The total number of purchases for an ad in the hour of the record.
+            description: The total number of purchases attributed to an ad in the hour of the record.
+          - name: conversion_add_billing
+            description: Total number of attributed "ADD_BILLING" conversion events for an ad in the hour of the record.
+          - name: conversion_save
+            description: Total number of attributed "SAVE" conversion events for an ad in the hour of the record.
+          - name: conversion_add_cart
+            description: Total number of attributed "ADD_CART" conversion events for an ad in the hour of the record.
+          - name: conversion_sign_ups 
+            description: Total number of attributed "SIGN_UP" conversion events for an ad in the hour of the record.
+          - name: conversion_start_checkout
+            description: Total number of attributed "START_CHECKOUT" conversion events for an ad in the hour of the record.
+          - name: conversion_searches
+            description: Total number of attributed "SEARCH" conversion events for an ad in the hour of the record.
+          - name: conversion_view_content
+            description: Total number of attributed "VIEW_CONTENT" conversion events for an ad in the hour of the record.
 
       - name: ad_squad_history
         identifier: "{{ var('snapchat_ads_ad_squad_history_identifier', 'ad_squad_history') }}"
@@ -156,9 +170,23 @@ sources:
           - name: swipes
             description: The number of swipes for an ad in the hour of the record. Swipes are when your ad was swiped up on or the CTA was tapped to view the attachment below.
           - name: conversion_purchases_value
-            description: The total value of purchases for an ad in the hour of the record.
+            description: The total value of purchases attributed to an ad in the hour of the record (microcurrency in Ad Account's currency).
           - name: conversion_purchases
-            description: The total number of purchases for an ad in the hour of the record.
+            description: The total number of purchases attributed to an ad in the hour of the record.
+          - name: conversion_add_billing
+            description: Total number of attributed "ADD_BILLING" conversion events for an ad in the hour of the record.
+          - name: conversion_save
+            description: Total number of attributed "SAVE" conversion events for an ad in the hour of the record.
+          - name: conversion_add_cart
+            description: Total number of attributed "ADD_CART" conversion events for an ad in the hour of the record.
+          - name: conversion_sign_ups 
+            description: Total number of attributed "SIGN_UP" conversion events for an ad in the hour of the record.
+          - name: conversion_start_checkout
+            description: Total number of attributed "START_CHECKOUT" conversion events for an ad in the hour of the record.
+          - name: conversion_searches
+            description: Total number of attributed "SEARCH" conversion events for an ad in the hour of the record.
+          - name: conversion_view_content
+            description: Total number of attributed "VIEW_CONTENT" conversion events for an ad in the hour of the record.
 
       - name: campaign_history
         identifier: "{{ var('snapchat_ads_campaign_history_identifier', 'campaign_history') }}"
@@ -218,9 +246,23 @@ sources:
           - name: swipes
             description: The number of swipes for an ad in the hour of the record. Swipes are when your ad was swiped up on or the CTA was tapped to view the attachment below.
           - name: conversion_purchases_value
-            description: The total value of purchases for an ad in the hour of the record.
+            description: The total value of purchases attributed to an ad in the hour of the record (microcurrency in Ad Account's currency).
           - name: conversion_purchases
-            description: The total number of purchases for an ad in the hour of the record.
+            description: The total number of purchases attributed to an ad in the hour of the record.
+          - name: conversion_add_billing
+            description: Total number of attributed "ADD_BILLING" conversion events for an ad in the hour of the record.
+          - name: conversion_save
+            description: Total number of attributed "SAVE" conversion events for an ad in the hour of the record.
+          - name: conversion_add_cart
+            description: Total number of attributed "ADD_CART" conversion events for an ad in the hour of the record.
+          - name: conversion_sign_ups 
+            description: Total number of attributed "SIGN_UP" conversion events for an ad in the hour of the record.
+          - name: conversion_start_checkout
+            description: Total number of attributed "START_CHECKOUT" conversion events for an ad in the hour of the record.
+          - name: conversion_searches
+            description: Total number of attributed "SEARCH" conversion events for an ad in the hour of the record.
+          - name: conversion_view_content
+            description: Total number of attributed "VIEW_CONTENT" conversion events for an ad in the hour of the record.
 
       - name: creative_history
         identifier: "{{ var('snapchat_ads_creative_history_identifier', 'creative_history') }}"

@@ -47,8 +47,7 @@ final as (
         impressions,
         (spend / 1000000.0) as spend,
         swipes,
-        
-        coalesce(cast(conversion_purchases_value as {{ dbt.type_float() }}), 0) as conversion_purchases_value
+        coalesce(cast(conversion_purchases_value as {{ dbt.type_float() }}), 0) / 1000000.0 as conversion_purchases_value
 
         {% for conversion in var('snapchat_ads__conversion_fields', []) %}
             , coalesce(cast({{ conversion }} as {{ dbt.type_bigint() }}), 0) as {{ conversion }}

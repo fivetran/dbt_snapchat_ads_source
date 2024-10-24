@@ -121,9 +121,9 @@ models:
       - name: swipes
         description: The number of swipes for an ad in the hour of the record.
       - name: conversion_purchases_value
-        description: The total value of purchases for an ad in the hour of the record.
+        description: The total value of purchases attributed to an ad in the hour of the record (in Ad Account's currency, converted from microcurrency).
       - name: conversion_purchases
-        description: The total number of purchases for an ad in the hour of the record.
+        description: The total number of purchases attributed an ad in the hour of the record.
 
   - name: stg_snapchat_ads__ad_squad_history
     description: Each record in this table represents a historic version of an ad squad in Snapchat.
@@ -209,9 +209,9 @@ models:
       - name: swipes
         description: The number of swipes for an ad in the hour of the record. Swipes are when your ad was swiped up on or the CTA was tapped to view the attachment below.
       - name: conversion_purchases_value
-        description: The total value of purchases for an ad in the hour of the record.
+        description: The total value of purchases attributed to an ad in the hour of the record (in Ad Account's currency, converted from microcurrency).
       - name: conversion_purchases
-        description: The total number of purchases for an ad in the hour of the record.
+        description: The total number of purchases attributed an ad in the hour of the record.
 
   - name: stg_snapchat_ads__campaign_history
     description: Each record in this table represents a historic version of a campaign in Snapchat.
@@ -297,9 +297,9 @@ models:
       - name: swipes
         description: The number of swipes for an ad in the hour of the record. Swipes are when your ad was swiped up on or the CTA was tapped to view the attachment below.
       - name: conversion_purchases_value
-        description: The total value of purchases for an ad in the hour of the record.
+        description: The total value of purchases attributed to an ad in the hour of the record (in Ad Account's currency, converted from microcurrency).
       - name: conversion_purchases
-        description: The total number of purchases for an ad in the hour of the record.
+        description: The total number of purchases attributed an ad in the hour of the record.
 
   - name: stg_snapchat_ads__creative_history
     description: Each record in this table represents a historic version of a creative in Snapchat.

@@ -47,14 +47,14 @@ final as (
         impressions,
         (spend / 1000000.0) as spend,
         swipes,
-
-        coalesce(cast(conversion_purchases_value as {{ dbt.type_float() }}), 0) as conversion_purchases_value
+        coalesce(cast(conversion_purchases_value as {{ dbt.type_float() }}), 0) / 1000000.0 as conversion_purchases_value
 
         {% for conversion in var('snapchat_ads__conversion_fields', []) %}
             , coalesce(cast({{ conversion }} as {{ dbt.type_bigint() }}), 0) as {{ conversion }}
         {% endfor %}
 
         {{ snapchat_ads_fill_pass_through_columns(pass_through_fields=var('snapchat_ads__campaign_hourly_report_passthrough_metrics'), except=(var('snapchat_ads__conversion_fields') + ['conversion_purchases_value'])) }}
+        
     from fields
 )
 
