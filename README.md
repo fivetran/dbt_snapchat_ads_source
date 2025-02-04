@@ -56,8 +56,8 @@ vars:
 ### (Optional) Step 4: Additional configurations
 <details open><summary>Expand/Collapse details</summary>
 
-#### Union multiple connectors
-If you have multiple snapchat_ads connectors in Fivetran and would like to use this package on all of them simultaneously, we have provided functionality to do so. The package will union all of the data together and pass the unioned table into the transformations. You will be able to see which source it came from in the `source_relation` column of each model. To use this functionality, you will need to set either the `snapchat_ads_union_schemas` OR `snapchat_ads_union_databases` variables (cannot do both) in your root `dbt_project.yml` file:
+#### Union multiple connections
+If you have multiple snapchat_ads connections in Fivetran and would like to use this package on all of them simultaneously, we have provided functionality to do so. The package will union all of the data together and pass the unioned table into the transformations. You will be able to see which source it came from in the `source_relation` column of each model. To use this functionality, you will need to set either the `snapchat_ads_union_schemas` OR `snapchat_ads_union_databases` variables (cannot do both) in your root `dbt_project.yml` file:
 
 ```yml
 vars:
@@ -106,7 +106,7 @@ vars:
 > We introduced support for conversion fields in our `*_hourly_report` data models in the [v0.7.0 release](https://github.com/fivetran/dbt_snapchat_ads_source/releases/tag/v0.7.0) of the package, but customers might have been bringing in these conversion fields earlier using the passthrough fields variables. The data models will avoid "duplicate column" errors automatically if this is the case.
 
 #### Change the source table references
-If an individual source table has a different name than the package expects, add the table name as it appears in your destination to the respective variable. This is not available when running the package on multiple unioned connectors.
+If an individual source table has a different name than the package expects, add the table name as it appears in your destination to the respective variable. This is not available when running the package on multiple unioned connections.
 
 > IMPORTANT: See this project's [`dbt_project.yml`](https://github.com/fivetran/dbt_snapchat_ads_source/blob/main/dbt_project.yml) variable declarations to see the expected names.
     
