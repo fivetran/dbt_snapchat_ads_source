@@ -1,3 +1,7 @@
+# dbt_snapchat_ads_source v0.8.0
+[PR #24](https://github.com/fivetran/dbt_snapchat_ads_source/pull/24) includes the following **BREAKING CHANGE** updates:
+
+
 # dbt_snapchat_ads_source v0.7.0
 [PR #24](https://github.com/fivetran/dbt_snapchat_ads_source/pull/24) includes the following **BREAKING CHANGE** updates:
 

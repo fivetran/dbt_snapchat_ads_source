@@ -357,3 +357,166 @@ models:
         description: Timestamp of when the record was updated.
       - name: is_most_recent_record
         description: "{{ doc('is_most_recent_record') }}"
+
+  - name: stg_snapchat_ads__campaign_geo_country_daily_report
+    description: Each record in this table represents a historic version of an ad in Snapchat.
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - source_relation
+            - campaign_id
+            - date_day 
+    columns:
+      - name: source_relation
+        description: "{{ doc('source_relation') }}"
+      - name: campaign_id
+        description: ID of campaign
+        tests:
+          - not_null
+      - name: date_day
+        description: The day that the report relates to.
+        tests:
+          - not_null
+      - name: attachment_quartile_1
+        description: Number of times your Long Form Video was viewed to 25% 
+      - name: attachment_quartile_2
+        description: Number of times your Long Form Video was viewed to 50% 
+      - name: attachment_quartile_3
+        description: Number of times your Long Form Video was viewed to 75% 
+      - name: attachment_total_view_time_millis
+        description: Total time Snapchatters spent on the attachment (HH:MM:SS)
+      - name: attachment_view_completion
+        description: The number of times your Long Form Video was viewed to completion (97% )
+      - name: quartile_1
+        description: The number of times your video ad was viewed to 25% 
+      - name: quartile_2
+        description: The number of times your video ad was viewed to 50% 
+      - name: quartile_3
+        description: The number of times your video ad was viewed to 75% 
+      - name: saves
+        description: Number of times a lens/filter was saved to Memories
+      - name: shares
+        description: Number of times a lens/filter was shared in a Chat or Story
+      - name: screen_time_millis
+        description: The number of milli seconds spent watching your ad across all paid impressions. Screen time starts recording as soon as the media is fully rendered on the device and the autoplay video starts
+      - name: video_views
+        description: The number of times your video was watched at least 2 seconds or swiped up, whichever comes first
+      - name: view_completion
+        description: The number of times your video ad was viewed to completion (97% )
+      - name: view_time_millis
+        description: The number of milli seconds spent watching your ad across all users reached.
+      - name: impressions
+        description: The number of impressions for an ad.
+      - name: spend
+        description: The amount of spend in microdollars for an ad.
+      - name: swipes
+        description: The number of swipes for an ad. Swipes are when your ad was swiped up on or the CTA was tapped to view the attachment below.
+      - name: conversion_purchases_value
+        description: The total value of purchases attributed to an ad (microcurrency in Ad Account's currency).
+      - name: conversion_purchases
+        description: The total number of purchases attributed to an ad.
+      - name: conversion_add_billing
+        description: Total number of attributed "ADD_BILLING" conversion events for an ad.
+      - name: conversion_save
+        description: Total number of attributed "SAVE" conversion events for an ad.
+      - name: conversion_add_cart
+        description: Total number of attributed "ADD_CART" conversion events for an ad.
+      - name: conversion_sign_ups 
+        description: Total number of attributed "SIGN_UP" conversion events for an ad.
+      - name: conversion_start_checkout
+        description: Total number of attributed "START_CHECKOUT" conversion events for an ad.
+      - name: conversion_searches
+        description: Total number of attributed "SEARCH" conversion events for an ad.
+      - name: conversion_view_content
+        description: Total number of attributed "VIEW_CONTENT" conversion events for an ad.
+      - name: _fivetran_synced
+        description: "{{ doc('_fivetran_synced') }}"
+      - name: conversion_app_opens
+        description: Total number of attributed "APP_OPEN" conversion events for an ad.
+      - name: conversion_level_completes
+        description: Total number of attributed "LEVEL_COMPLETE" conversion events for an ad.
+      - name: conversion_page_views
+        description: Total number of attributed "PAGE_VIEW" conversion events for an ad.
+        
+
+
+
+  - name: stg_snapchat_ads__campaign_geo_region_daily_report
+    description: Each record in this table represents a historic version of an ad in Snapchat.
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - source_relation
+            - campaign_id
+            - date_day 
+    columns:
+      - name: source_relation
+        description: "{{ doc('source_relation') }}"
+      - name: campaign_id
+        description: ID of campaign
+        tests:
+          - not_null
+      - name: date_day
+        description: The day that the report relates to.
+        tests:
+          - not_null
+      - name: attachment_quartile_1
+        description: Number of times your Long Form Video was viewed to 25% 
+      - name: attachment_quartile_2
+        description: Number of times your Long Form Video was viewed to 50% 
+      - name: attachment_quartile_3
+        description: Number of times your Long Form Video was viewed to 75% 
+      - name: attachment_total_view_time_millis
+        description: Total time Snapchatters spent on the attachment (HH:MM:SS)
+      - name: attachment_view_completion
+        description: The number of times your Long Form Video was viewed to completion (97% )
+      - name: quartile_1
+        description: The number of times your video ad was viewed to 25% 
+      - name: quartile_2
+        description: The number of times your video ad was viewed to 50% 
+      - name: quartile_3
+        description: The number of times your video ad was viewed to 75% 
+      - name: saves
+        description: Number of times a lens/filter was saved to Memories
+      - name: shares
+        description: Number of times a lens/filter was shared in a Chat or Story
+      - name: screen_time_millis
+        description: The number of milli seconds spent watching your ad across all paid impressions. Screen time starts recording as soon as the media is fully rendered on the device and the autoplay video starts
+      - name: video_views
+        description: The number of times your video was watched at least 2 seconds or swiped up, whichever comes first
+      - name: view_completion
+        description: The number of times your video ad was viewed to completion (97% )
+      - name: view_time_millis
+        description: The number of milli seconds spent watching your ad across all users reached.
+      - name: impressions
+        description: The number of impressions for an ad.
+      - name: spend
+        description: The amount of spend in microdollars for an ad.
+      - name: swipes
+        description: The number of swipes for an ad. Swipes are when your ad was swiped up on or the CTA was tapped to view the attachment below.
+      - name: conversion_purchases_value
+        description: The total value of purchases attributed to an ad (microcurrency in Ad Account's currency).
+      - name: conversion_purchases
+        description: The total number of purchases attributed to an ad.
+      - name: conversion_add_billing
+        description: Total number of attributed "ADD_BILLING" conversion events for an ad.
+      - name: conversion_save
+        description: Total number of attributed "SAVE" conversion events for an ad.
+      - name: conversion_add_cart
+        description: Total number of attributed "ADD_CART" conversion events for an ad.
+      - name: conversion_sign_ups 
+        description: Total number of attributed "SIGN_UP" conversion events for an ad.
+      - name: conversion_start_checkout
+        description: Total number of attributed "START_CHECKOUT" conversion events for an ad.
+      - name: conversion_searches
+        description: Total number of attributed "SEARCH" conversion events for an ad.
+      - name: conversion_view_content
+        description: Total number of attributed "VIEW_CONTENT" conversion events for an ad.
+      - name: _fivetran_synced
+        description: "{{ doc('_fivetran_synced') }}"
+      - name: conversion_app_opens
+        description: Total number of attributed "APP_OPEN" conversion events for an ad.
+      - name: conversion_level_completes
+        description: Total number of attributed "LEVEL_COMPLETE" conversion events for an ad.
+      - name: conversion_page_views
+        description: Total number of attributed "PAGE_VIEW" conversion events for an ad.
