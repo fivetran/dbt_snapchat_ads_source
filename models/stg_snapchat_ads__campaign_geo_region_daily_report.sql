@@ -29,6 +29,7 @@ final as (
     select
         source_relation, 
         campaign_id,
+        region,
         cast (date as {{ dbt.type_timestamp() }}) as date_day,
         attachment_quartile_1,
         attachment_quartile_2,

@@ -329,6 +329,8 @@ sources:
             description: ID of campaign
           - name: date
             description: The day that the report relates to.
+          - name: country
+            description: The country that the report relates to.
           - name: attachment_quartile_1
             description: Number of times your Long Form Video was viewed to 25% 
           - name: attachment_quartile_2
@@ -400,6 +402,8 @@ sources:
             description: ID of campaign
           - name: date
             description: The day that the report relates to.
+          - name: region
+            description: The region that the report relates to.
           - name: attachment_quartile_1
             description: Number of times your Long Form Video was viewed to 25% 
           - name: attachment_quartile_2

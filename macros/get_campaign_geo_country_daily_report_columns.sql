@@ -8,6 +8,7 @@
     {"name": "attachment_view_completion", "datatype": dbt.type_int()},
     {"name": "campaign_id", "datatype": dbt.type_string()},
     {"name": "date", "datatype": dbt.type_timestamp()},
+    {"name": "country", "datatype": dbt.type_string()},
     {"name": "impressions", "datatype": dbt.type_int()},
     {"name": "quartile_1", "datatype": dbt.type_int()},
     {"name": "quartile_2", "datatype": dbt.type_int()},

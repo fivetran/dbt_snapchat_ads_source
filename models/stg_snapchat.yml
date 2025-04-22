@@ -365,12 +365,17 @@ models:
           combination_of_columns:
             - source_relation
             - campaign_id
-            - date_day 
+            - date_day
+            - country 
     columns:
       - name: source_relation
         description: "{{ doc('source_relation') }}"
       - name: campaign_id
         description: ID of campaign
+        tests:
+          - not_null
+      - name: country
+        description: The country that the report relates to.
         tests:
           - not_null
       - name: date_day
@@ -448,12 +453,17 @@ models:
           combination_of_columns:
             - source_relation
             - campaign_id
-            - date_day 
+            - date_day
+            - region
     columns:
       - name: source_relation
         description: "{{ doc('source_relation') }}"
       - name: campaign_id
         description: ID of campaign
+        tests:
+          - not_null
+      - name: region
+        description: The region that the report relates to.
         tests:
           - not_null
       - name: date_day
