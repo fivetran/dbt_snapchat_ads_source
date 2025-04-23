@@ -218,6 +218,18 @@ sources:
             description: The ID of the related ad account in Snapchat.
           - name: name
             description: The name of the campaign in Snapchat.
+          - name: daily_budget_micro
+            description: Daily Spend Cap (micro-currency)
+          - name: start_time
+            description: Start time
+          - name: end_time
+            description: End time
+          - name: lifetime_spend_cap_micro
+            description: Lifetime spend cap for the campaign (microcurrency)
+          - name: status
+            description: Campaign status (ACTIVE, PAUSED)
+          - name: objective
+            description: Objective of the Campaign (BRAND_AWARENESS (default), APP_CONVERSION, APP_INSTALL, etc)
 
       - name: campaign_hourly_report
         identifier: "{{ var('snapchat_ads_campaign_hourly_report_identifier', 'campaign_hourly_report') }}"

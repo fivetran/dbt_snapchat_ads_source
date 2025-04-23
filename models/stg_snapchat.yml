@@ -242,6 +242,18 @@ models:
         description: Timestamp of when the record was updated.
       - name: is_most_recent_record
         description: "{{ doc('is_most_recent_record') }}"
+      - name: daily_budget_micro
+        description: Daily Spend Cap (micro-currency)
+      - name: start_time
+        description: Start time
+      - name: end_time
+        description: End time
+      - name: lifetime_spend_cap_micro
+        description: Lifetime spend cap for the campaign (microcurrency)
+      - name: status
+        description: Campaign status (ACTIVE, PAUSED)
+      - name: objective
+        description: Objective of the Campaign (BRAND_AWARENESS (default), APP_CONVERSION, APP_INSTALL, etc)
 
   - name: stg_snapchat_ads__campaign_hourly_report
     description: Each record in this table represents a historic version of an ad in Snapchat.

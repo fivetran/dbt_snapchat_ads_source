@@ -1,4 +1,4 @@
-{{ config(enabled=var('ad_reporting__snapchat_ads_enabled', true)) }}
+{{ config(enabled=var('ad_reporting__snapchat_ads_enabled', true) and var('snapchat__using_campaign_region_report', false)) }}
 
 with base as (
 
