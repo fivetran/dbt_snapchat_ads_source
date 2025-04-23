@@ -107,13 +107,13 @@ models:
       - name: shares
         description: Number of times a lens/filter was shared in a Chat or Story
       - name: screen_time
-        description: The number of milli seconds spent watching your ad across all paid impressions. Screen time starts recording as soon as the media is fully rendered on the device and the autoplay video starts
+        description: The number of seconds spent watching your ad across all paid impressions. Screen time starts recording as soon as the media is fully rendered on the device and the autoplay video starts
       - name: video_views
         description: The number of times your video was watched at least 2 seconds or swiped up, whichever comes first
       - name: view_completion
         description: The number of times your video ad was viewed to completion (97% )
       - name: view_time
-        description: The number of milli seconds spent watching your ad across all users reached.
+        description: The number of seconds spent watching your ad across all users reached.
       - name: impressions
         description: The number of impressions for an ad in the hour of the record.
       - name: spend
@@ -195,13 +195,13 @@ models:
       - name: shares
         description: Number of times a lens/filter was shared in a Chat or Story
       - name: screen_time
-        description: The number of milli seconds spent watching your ad across all paid impressions. Screen time starts recording as soon as the media is fully rendered on the device and the autoplay video starts
+        description: The number of seconds spent watching your ad across all paid impressions. Screen time starts recording as soon as the media is fully rendered on the device and the autoplay video starts
       - name: video_views
         description: The number of times your video was watched at least 2 seconds or swiped up, whichever comes first
       - name: view_completion
         description: The number of times your video ad was viewed to completion (97% )
       - name: view_time
-        description: The number of milli seconds spent watching your ad across all users reached.
+        description: The number of seconds spent watching your ad across all users reached.
       - name: impressions
         description: The number of impressions for an ad in the hour of the record.
       - name: spend
@@ -242,14 +242,14 @@ models:
         description: Timestamp of when the record was updated.
       - name: is_most_recent_record
         description: "{{ doc('is_most_recent_record') }}"
-      - name: daily_budget_micro
-        description: Daily Spend Cap (micro-currency)
+      - name: daily_budget
+        description: Daily Spend Cap converted from microcurrency
       - name: start_time
         description: Start time
       - name: end_time
         description: End time
-      - name: lifetime_spend_cap_micro
-        description: Lifetime spend cap for the campaign (microcurrency)
+      - name: lifetime_spend_cap
+        description: Lifetime spend cap for the campaign converted from microcurrency
       - name: status
         description: Campaign status (ACTIVE, PAUSED)
       - name: objective
@@ -295,13 +295,13 @@ models:
       - name: shares
         description: Number of times a lens/filter was shared in a Chat or Story
       - name: screen_time
-        description: The number of milli seconds spent watching your ad across all paid impressions. Screen time starts recording as soon as the media is fully rendered on the device and the autoplay video starts
+        description: The number of seconds spent watching your ad across all paid impressions. Screen time starts recording as soon as the media is fully rendered on the device and the autoplay video starts
       - name: video_views
         description: The number of times your video was watched at least 2 seconds or swiped up, whichever comes first
       - name: view_completion
         description: The number of times your video ad was viewed to completion (97% )
       - name: view_time
-        description: The number of milli seconds spent watching your ad across all users reached.
+        description: The number of seconds spent watching your ad across all users reached.
       - name: impressions
         description: The number of impressions for an ad in the hour of the record.
       - name: spend
@@ -400,7 +400,7 @@ models:
         description: Number of times your Long Form Video was viewed to 50% 
       - name: attachment_quartile_3
         description: Number of times your Long Form Video was viewed to 75% 
-      - name: attachment_total_view_time_millis
+      - name: attachment_total_view_time
         description: Total time Snapchatters spent on the attachment (HH:MM:SS)
       - name: attachment_view_completion
         description: The number of times your Long Form Video was viewed to completion (97% )
@@ -414,22 +414,22 @@ models:
         description: Number of times a lens/filter was saved to Memories
       - name: shares
         description: Number of times a lens/filter was shared in a Chat or Story
-      - name: screen_time_millis
-        description: The number of milli seconds spent watching your ad across all paid impressions. Screen time starts recording as soon as the media is fully rendered on the device and the autoplay video starts
+      - name: screen_time
+        description: The number of seconds spent watching your ad across all paid impressions. Screen time starts recording as soon as the media is fully rendered on the device and the autoplay video starts
       - name: video_views
         description: The number of times your video was watched at least 2 seconds or swiped up, whichever comes first
       - name: view_completion
         description: The number of times your video ad was viewed to completion (97% )
-      - name: view_time_millis
-        description: The number of milli seconds spent watching your ad across all users reached.
+      - name: view_time
+        description: The number of seconds spent watching your ad across all users reached.
       - name: impressions
         description: The number of impressions for an ad.
       - name: spend
-        description: The amount of spend in microdollars for an ad.
+        description: The amount of spend for an ad.
       - name: swipes
         description: The number of swipes for an ad. Swipes are when your ad was swiped up on or the CTA was tapped to view the attachment below.
       - name: conversion_purchases_value
-        description: The total value of purchases attributed to an ad (microcurrency in Ad Account's currency).
+        description: The total value of purchases attributed to an ad.
       - name: conversion_purchases
         description: The total number of purchases attributed to an ad.
       - name: conversion_add_billing
@@ -488,7 +488,7 @@ models:
         description: Number of times your Long Form Video was viewed to 50% 
       - name: attachment_quartile_3
         description: Number of times your Long Form Video was viewed to 75% 
-      - name: attachment_total_view_time_millis
+      - name: attachment_total_view_time
         description: Total time Snapchatters spent on the attachment (HH:MM:SS)
       - name: attachment_view_completion
         description: The number of times your Long Form Video was viewed to completion (97% )
@@ -502,22 +502,22 @@ models:
         description: Number of times a lens/filter was saved to Memories
       - name: shares
         description: Number of times a lens/filter was shared in a Chat or Story
-      - name: screen_time_millis
-        description: The number of milli seconds spent watching your ad across all paid impressions. Screen time starts recording as soon as the media is fully rendered on the device and the autoplay video starts
+      - name: screen_time
+        description: The number of seconds spent watching your ad across all paid impressions. Screen time starts recording as soon as the media is fully rendered on the device and the autoplay video starts
       - name: video_views
         description: The number of times your video was watched at least 2 seconds or swiped up, whichever comes first
       - name: view_completion
         description: The number of times your video ad was viewed to completion (97% )
-      - name: view_time_millis
-        description: The number of milli seconds spent watching your ad across all users reached.
+      - name: view_time
+        description: The number of seconds spent watching your ad across all users reached.
       - name: impressions
         description: The number of impressions for an ad.
       - name: spend
-        description: The amount of spend in microdollars for an ad.
+        description: The amount of spend for an ad.
       - name: swipes
         description: The number of swipes for an ad. Swipes are when your ad was swiped up on or the CTA was tapped to view the attachment below.
       - name: conversion_purchases_value
-        description: The total value of purchases attributed to an ad (microcurrency in Ad Account's currency).
+        description: The total value of purchases attributed to an ad.
       - name: conversion_purchases
         description: The total number of purchases attributed to an ad.
       - name: conversion_add_billing

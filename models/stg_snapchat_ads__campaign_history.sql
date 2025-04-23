@@ -36,10 +36,10 @@ final as (
         name as campaign_name,
         cast(_fivetran_synced as {{ dbt.type_timestamp() }}) as _fivetran_synced,
         cast(updated_at as {{ dbt.type_timestamp() }}) as updated_at,
-        cast(daily_budget_micro as {{ dbt.type_int() }}) as daily_budget_micro,
+        (daily_budget_micro / 1000000.0) as daily_budget,
         cast(start_time as {{ dbt.type_timestamp() }}) as start_time,
         cast(end_time as {{ dbt.type_timestamp() }}) as end_time,
-        cast(lifetime_spend_cap_micro as {{ dbt.type_int() }}) as lifetime_spend_cap_micro,
+        (lifetime_spend_cap_micro / 1000000.0) as lifetime_spend_cap,
         status,
         objective,
         row_number() over (partition by source_relation, id order by _fivetran_synced desc) = 1 as is_most_recent_record
