@@ -103,9 +103,9 @@ models:
       - name: quartile_3
         description: The number of times your video ad was viewed to 75% 
       - name: saves
-        description: Number of times a lens/filter was saved to Memories
+        description: Number of times an ad was saved to Memories
       - name: shares
-        description: Number of times a lens/filter was shared in a Chat or Story
+        description: Number of times an ad was shared in a Chat or Story
       - name: screen_time
         description: The number of seconds spent watching your ad across all paid impressions. Screen time starts recording as soon as the media is fully rendered on the device and the autoplay video starts
       - name: video_views
@@ -191,9 +191,9 @@ models:
       - name: quartile_3
         description: The number of times your video ad was viewed to 75% 
       - name: saves
-        description: Number of times a lens/filter was saved to Memories
+        description: Number of times components of the ad squad were saved to Memories
       - name: shares
-        description: Number of times a lens/filter was shared in a Chat or Story
+        description: Number of times components of the ad squad were shared in a Chat or Story
       - name: screen_time
         description: The number of seconds spent watching your ad across all paid impressions. Screen time starts recording as soon as the media is fully rendered on the device and the autoplay video starts
       - name: video_views
@@ -291,9 +291,9 @@ models:
       - name: quartile_3
         description: The number of times your video ad was viewed to 75% 
       - name: saves
-        description: Number of times a lens/filter was saved to Memories
+        description: Number of times components of the campaign were was saved to Memories
       - name: shares
-        description: Number of times a lens/filter was shared in a Chat or Story
+        description: Number of times components of the campaign were shared in a Chat or Story
       - name: screen_time
         description: The number of seconds spent watching your ad across all paid impressions. Screen time starts recording as soon as the media is fully rendered on the device and the autoplay video starts
       - name: video_views
@@ -403,7 +403,7 @@ models:
       - name: attachment_total_view_time
         description: Total time Snapchatters spent on the attachment (HH:MM:SS)
       - name: attachment_view_completion
-        description: The number of times your Long Form Video was viewed to completion (97% )
+        description: The number of times your Long Form Video was viewed to completion (97%)
       - name: quartile_1
         description: The number of times your video ad was viewed to 25% 
       - name: quartile_2
@@ -411,9 +411,9 @@ models:
       - name: quartile_3
         description: The number of times your video ad was viewed to 75% 
       - name: saves
-        description: Number of times a lens/filter was saved to Memories
+        description: Number of times components of the campaign were saved to Memories
       - name: shares
-        description: Number of times a lens/filter was shared in a Chat or Story
+        description: Number of times components of the campaign were shared in a Chat or Story
       - name: screen_time
         description: The number of seconds spent watching your ad across all paid impressions. Screen time starts recording as soon as the media is fully rendered on the device and the autoplay video starts
       - name: video_views
@@ -499,9 +499,9 @@ models:
       - name: quartile_3
         description: The number of times your video ad was viewed to 75% 
       - name: saves
-        description: Number of times a lens/filter was saved to Memories
+        description: Number of times components of the campaign were saved to Memories
       - name: shares
-        description: Number of times a lens/filter was shared in a Chat or Story
+        description: Number of times components of the campaign were shared in a Chat or Story
       - name: screen_time
         description: The number of seconds spent watching your ad across all paid impressions. Screen time starts recording as soon as the media is fully rendered on the device and the autoplay video starts
       - name: video_views
