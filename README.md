@@ -1,4 +1,5 @@
-<p align="center">
+# Snapchat Ads Source dbt Package ([Docs](https://fivetran.github.io/dbt_snapchat_ads_source/))
+<p align="left">
     <a alt="License"
         href="https://github.com/fivetran/dbt_snapchat_ads_source/blob/main/LICENSE">
         <img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" /></a>
@@ -10,7 +11,6 @@
         <img src="https://img.shields.io/badge/Contributions-welcome-blueviolet" /></a>
 </p>
 
-# Snapchat Ads Source dbt Package ([Docs](https://fivetran.github.io/dbt_snapchat_ads_source/))
 ## What does this dbt package do?
 - Materializes [Snapchat Ads staging tables](https://fivetran.github.io/dbt_snapchat_ads_source/#!/overview/snapchat_ads_source/models/?g_v=1) which leverage data in the format described by [this ERD](https://fivetran.com/docs/applications/snapchat-ads/#schemainformation). These staging tables clean, test, and prepare your Snapchat Ads data from [Fivetran's connector](https://fivetran.com/docs/applications/snapchat-ads) for analysis by doing the following:
   - Name columns for consistency across all packages and for easier analysis
