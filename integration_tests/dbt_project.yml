@@ -18,12 +18,6 @@ vars:
     snapchat_ads_campaign_geo_region_daily_report_identifier: "snapchat_campaign_geo_region_daily_report_data"
     snapchat_ads_campaign_geo_country_daily_report_identifier: "snapchat_campaign_geo_country_daily_report_data"
 
-    snapchat_ads__conversion_fields: ['conversion_purchases']
-    snapchat_ads__ad_hourly_passthrough_metrics:
-      - name: conversion_add_billing
-      - name: conversion_purchases
-        alias: conversion_purchases_alias
-      - name: conversion_page_views
       
 dispatch:
   - macro_namespace: dbt_utils
