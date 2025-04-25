@@ -27,7 +27,7 @@
 {{ fivetran_utils.add_pass_through_columns(columns, var('snapchat_ads__conversion_fields')) }}
 
 {# Doing it this way in case users were bringing in conversion metrics via passthrough columns prior to us adding them by default #}
-{{ snapchat_ads_add_pass_through_columns(base_columns=columns, pass_through_fields=var('snapchat_ads__campaign_daily_report_passthrough_metrics'), except_fields=(var('snapchat_ads__conversion_fields') + ['conversion_purchases_value'])) }}
+{{ snapchat_ads_add_pass_through_columns(base_columns=columns, pass_through_fields=var('snapchat_ads__campaign_daily_region_report_passthrough_metrics'), except_fields=(var('snapchat_ads__conversion_fields'))) }}
 {{ return(columns) }}
 
 {% endmacro %}

@@ -1,6 +1,17 @@
 # dbt_snapchat_ads_source v0.8.0
-[PR #24](https://github.com/fivetran/dbt_snapchat_ads_source/pull/24) includes the following **BREAKING CHANGE** updates:
+[PR #27](https://github.com/fivetran/dbt_snapchat_ads_source/pull/27) includes the following updates:
 
+## Breaking Changes:
+- Introduces the two following campaign-based staging models:
+  - `stg_snapchat_ads__campaign_geo_country_daily_report`
+  - `stg_snapchat_ads__campaign_geo_region_daily_report`
+- Please note that these are disabled by default. To enable them, add the following configuration to your root `dbt_project.yml` file:
+
+```yml
+vars:
+    snapchat__using_campaign_country_report: true # Necessary for the stg_snapchat_ads__campaign_geo_country_daily_report model. False by default. Requires the campaign_geo_country_daily_report
+    snapchat__using_campaign_region_report: true # Necessary for the stg_snapchat_ads__campaign_geo_region_daily_report model. False by default. Requires the campaign_geo_region_daily_report
+```
 
 # dbt_snapchat_ads_source v0.7.0
 [PR #24](https://github.com/fivetran/dbt_snapchat_ads_source/pull/24) includes the following **BREAKING CHANGE** updates:
