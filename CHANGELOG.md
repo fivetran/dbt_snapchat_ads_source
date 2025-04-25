@@ -1,12 +1,13 @@
 # dbt_snapchat_ads_source v0.8.0
 [PR #27](https://github.com/fivetran/dbt_snapchat_ads_source/pull/27) includes the following updates:
 
-**2 total changes • 1 breaking change**
+## Schema Updates
 
-| Model/Column                                       | Change type | Old name | New name | Notes                                         |
-|----------------------------------------------------|-------------|----------|----------|-----------------------------------------------|
-| `stg_snapchat_ads__campaign_geo_country_daily_report`        | New Model   |          |          | Uses `campaign_geo_country_daily_report` source table |
-| `stg_snapchat_ads__campaign_geo_region_daily_report`    | New Model   |          |          | Uses `campaign_geo_region_daily_report` source table |
+**2 total changes • 1 breaking change**
+| **Model/Column** | **Change type** | **Old name** | **New name** | **Notes** |
+| ---------------- | --------------- | ------------ | ------------ | --------- |
+| `stg_snapchat_ads__campaign_geo_country_daily_report` | New Staging Model |   |   |  Uses `campaign_geo_country_daily_report` source table  |
+| `stg_snapchat_ads__campaign_geo_region_daily_report` | New Staging Model |   |   |  Uses `campaign_geo_region_daily_report` source table  |
 
 Please note that these are disabled by default. To enable them, add the following configuration to your root `dbt_project.yml` file:
 
