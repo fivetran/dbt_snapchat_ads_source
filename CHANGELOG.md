@@ -27,6 +27,9 @@ vars:
   - `snapchat_ads__campaign_daily_region_report_passthrough_metrics`
 For more information on how to configure this, refer to the [README](https://github.com/fivetran/dbt_reddit_ads_source/tree/main?tab=readme-ov-file#passing-through-additional-metrics).
 
+## Documentation Updates
+- Updated field descriptions to make more accurate.
+
 # dbt_snapchat_ads_source v0.7.0
 [PR #24](https://github.com/fivetran/dbt_snapchat_ads_source/pull/24) includes the following **BREAKING CHANGE** updates:
 
