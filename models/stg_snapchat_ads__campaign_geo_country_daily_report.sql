@@ -54,7 +54,7 @@ final as (
             , coalesce(cast({{ conversion }} as {{ dbt.type_bigint() }}), 0) as {{ conversion }}
         {% endfor %}
 
-        {{ snapchat_ads_fill_pass_through_columns(pass_through_fields=var('snapchat_ads__campaign_daily_country_report_passthrough_metrics'), except=(var('snapchat_ads__conversion_fields'))) }}
+        {{ snapchat_ads_fill_pass_through_columns(pass_through_fields=var('snapchat_ads__campaign_daily_country_report_passthrough_metrics')) }}
         
     from fields
 )
