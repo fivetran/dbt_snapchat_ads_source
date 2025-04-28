@@ -97,6 +97,8 @@ sources:
             description: The total value of purchases attributed to an ad in the hour of the record (microcurrency in Ad Account's currency).
           - name: _fivetran_synced
             description: "{{ doc('_fivetran_synced') }}"
+          - name: conversion_purchases
+            description: The total number of purchases attributed an ad in the hour of the record.
 
       - name: ad_squad_history
         identifier: "{{ var('snapchat_ads_ad_squad_history_identifier', 'ad_squad_history') }}"
@@ -157,6 +159,8 @@ sources:
             description: The number of swipes for an ad in the hour of the record. Swipes are when your ad was swiped up on or the CTA was tapped to view the attachment below.
           - name: conversion_purchases_value
             description: The total value of purchases attributed to an ad in the hour of the record (microcurrency in Ad Account's currency).
+          - name: conversion_purchases
+            description: The total number of purchases attributed to an ad in the hour of the record.
           - name: _fivetran_synced
             description: "{{ doc('_fivetran_synced') }}"
 
@@ -231,6 +235,8 @@ sources:
             description: The number of swipes for an ad in the hour of the record. Swipes are when your ad was swiped up on or the CTA was tapped to view the attachment below.
           - name: conversion_purchases_value
             description: The total value of purchases attributed to an ad in the hour of the record (microcurrency in Ad Account's currency).
+          - name: conversion_purchases
+            description: The total number of purchases attributed to an ad in the hour of the record.
           - name: _fivetran_synced
             description: "{{ doc('_fivetran_synced') }}"
             
