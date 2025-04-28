@@ -1,4 +1,5 @@
-{{ config(enabled=var('ad_reporting__snapchat_ads_enabled', true)) }}
+{{ config(enabled=var('ad_reporting__snapchat_ads_enabled', true) and var('snapchat_ads__using_campaign_country_report', false)) }}
+
 
 {{
     fivetran_utils.union_data(
