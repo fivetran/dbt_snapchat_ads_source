@@ -3,16 +3,16 @@
 
 ## Schema Updates
 
-**2 total changes • 1 breaking change**
+**5 total changes • 1 breaking change**
 | **Model/Column** | **Change type** | **Old name** | **New name** | **Notes** |
 | ---------------- | --------------- | ------------ | ------------ | --------- |
 | `stg_snapchat_ads__campaign_geo_country_daily_report` | New Staging Model |   |   |  Uses `campaign_geo_country_daily_report` source table  |
 | `stg_snapchat_ads__campaign_geo_region_daily_report` | New Staging Model |   |   |  Uses `campaign_geo_region_daily_report` source table  |
-| `stg_snapchat_ads__campaign_geo_country_daily_report_tmp` | New Model |   |   |  Uses `campaign_geo_country_daily_report` source table  |
-| `stg_snapchat_ads__campaign_geo_region_daily_report_tmp` | New Model |   |   |  Uses `campaign_geo_region_daily_report` source table  |
+| `stg_snapchat_ads__campaign_geo_country_daily_report_tmp` | New Temp Model |   |   |  Uses `campaign_geo_country_daily_report` source table  |
+| `stg_snapchat_ads__campaign_geo_region_daily_report_tmp` | New Temp Model |   |   |  Uses `campaign_geo_region_daily_report` source table  |
 | `stg_snapchat_ads__campaign_history` | Modified Existing Model |   |   |  Added the new fields `daily_budget_micro`, `start_time`, `end_time`, `lifetime_spend_cap_micro`, `status`, `objective`  |
 
-Please note that these are disabled by default for dbt Core users. To enable them, add the following configuration to your root `dbt_project.yml` file. For more information on how to configure this, refer to the [README](https://github.com/fivetran/dbt_reddit_ads_source/tree/main?tab=readme-ov-file#enabling-models-that-are-disabled-by-default).
+Please note that these are disabled by default for dbt Core users. To enable them, add the following configuration to your root `dbt_project.yml` file. For more information on how to configure this, refer to the [README](https://github.com/fivetran/dbt_snapchat_ads_source/tree/main?tab=readme-ov-file#enabling-models-that-are-disabled-by-default).
 
 
 ```yml
@@ -25,7 +25,7 @@ vars:
 - Introduced the following variables for each respective new staging model in order to pass through additional metrics from their corresponding source tables:
   - `snapchat_ads__campaign_daily_country_report_passthrough_metrics`
   - `snapchat_ads__campaign_daily_region_report_passthrough_metrics`
-For more information on how to configure this, refer to the [README](https://github.com/fivetran/dbt_reddit_ads_source/tree/main?tab=readme-ov-file#passing-through-additional-metrics).
+For more information on how to configure this, refer to the [README](https://github.com/fivetran/dbt_snapchat_ads_source/tree/main?tab=readme-ov-file#passing-through-additional-metrics).
 
 ## Documentation Updates
 - Updated field descriptions to make more accurate.
@@ -47,7 +47,7 @@ We have added more robust support for conversions in our data models by doing th
 
 ## Under the Hood
 - Updated `snapchat_*_hourly_report_data` seed files with relevant conversion fields for more robust testing. 
-- Ensured backwards compatibility with existing passthrough column frameworks by creating `snapchat_ads_add_pass_through_columns` and `snapchat_ads_fill_pass_through_columns` macro checks for whether these conversion fields are already brought in by the existing [passthrough variables](https://github.com/fivetran/dbt_reddit_ads_source/tree/main?tab=readme-ov-file#passing-through-additional-metrics). This ensures there are no duplicate column errors if both the new conversion variable and the old passthrough variable are leveraged in any `stg_snapchat_ads__*_hourly_report*` data model.
+- Ensured backwards compatibility with existing passthrough column frameworks by creating `snapchat_ads_add_pass_through_columns` and `snapchat_ads_fill_pass_through_columns` macro checks for whether these conversion fields are already brought in by the existing [passthrough variables](https://github.com/fivetran/dbt_snapchat_ads_source/tree/main?tab=readme-ov-file#passing-through-additional-metrics). This ensures there are no duplicate column errors if both the new conversion variable and the old passthrough variable are leveraged in any `stg_snapchat_ads__*_hourly_report*` data model.
 
 ## Contributors
 - [Seer Interactive](https://www.seerinteractive.com/?utm_campaign=Fivetran%20%7C%20Models&utm_source=Fivetran&utm_medium=Fivetran%20Documentation)

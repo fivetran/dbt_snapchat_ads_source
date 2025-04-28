@@ -17,8 +17,9 @@ vars:
     snapchat_ads_creative_url_tag_history_identifier: "snapchat_creative_url_tag_history_data"
     snapchat_ads_campaign_geo_region_daily_report_identifier: "snapchat_campaign_geo_region_daily_report_data"
     snapchat_ads_campaign_geo_country_daily_report_identifier: "snapchat_campaign_geo_country_daily_report_data"
+    # snapchat_ads__using_campaign_country_report: true # enable for docs
+    # snapchat_ads__using_campaign_region_report: true # enable for docs
 
-      
 dispatch:
   - macro_namespace: dbt_utils
     search_order: ['spark_utils', 'dbt_utils']
