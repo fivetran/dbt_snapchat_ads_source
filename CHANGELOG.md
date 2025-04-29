@@ -4,7 +4,7 @@
 ## Schema Updates
 
 **5 total changes • 1 breaking change**
-| **Model/Column** | **Change type** | **Old name** | **New name** | **Notes** |
+| **Data Model** | **Change type** | **Old name** | **New name** | **Notes** |
 | ---------------- | --------------- | ------------ | ------------ | --------- |
 | `stg_snapchat_ads__campaign_geo_country_daily_report` | New Staging Model |   |   |  Uses `campaign_geo_country_daily_report` source table  |
 | `stg_snapchat_ads__campaign_geo_region_daily_report` | New Staging Model |   |   |  Uses `campaign_geo_region_daily_report` source table  |
