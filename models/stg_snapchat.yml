@@ -120,6 +120,8 @@ models:
         description: The amount of spend for an ad in the hour of the record converted from micros.
       - name: swipes
         description: The number of swipes for an ad in the hour of the record.
+      - name: conversion_purchases
+        description: The total number of purchases attributed to an ad for the day of the record.
       - name: conversion_purchases_value
         description: The total value of purchases attributed to an ad in the hour of the record (in Ad Account's currency, converted from microcurrency).
 
@@ -206,6 +208,8 @@ models:
         description: The amount of spend for an ad in the hour of the record.
       - name: swipes
         description: The number of swipes for an ad in the hour of the record. Swipes are when your ad was swiped up on or the CTA was tapped to view the attachment below.
+      - name: conversion_purchases
+        description: The total number of purchases attributed to an ad for the day of the record.
       - name: conversion_purchases_value
         description: The total value of purchases attributed to an ad in the hour of the record (in Ad Account's currency, converted from microcurrency).
 
@@ -304,6 +308,8 @@ models:
         description: The amount of spend for an ad in the hour of the record.
       - name: swipes
         description: The number of swipes for an ad in the hour of the record. Swipes are when your ad was swiped up on or the CTA was tapped to view the attachment below.
+      - name: conversion_purchases
+        description: The total number of purchases attributed to an ad for the day of the record.
       - name: conversion_purchases_value
         description: The total value of purchases attributed to an ad in the hour of the record (in Ad Account's currency, converted from microcurrency).
 
@@ -365,7 +371,7 @@ models:
         description: "{{ doc('is_most_recent_record') }}"
 
   - name: stg_snapchat_ads__campaign_geo_country_daily_report
-    description: Each record in this table represents a historic version of an ad in Snapchat.
+    description: Each record represents a daily performance summary per country for each campaign.
     tests:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
@@ -426,13 +432,10 @@ models:
         description: The total value of purchases attributed to an ad.
       - name: conversion_purchases
         description: The total number of purchases attributed to an ad for the day of the record.
-      - name: _fivetran_synced
-        description: "{{ doc('_fivetran_synced') }}"
-
 
 
   - name: stg_snapchat_ads__campaign_geo_region_daily_report
-    description: Each record in this table represents a historic version of an ad in Snapchat.
+    description: Each record represents a daily performance summary per region for each campaign.
     tests:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
@@ -493,5 +496,3 @@ models:
         description: The total value of purchases attributed to an ad.
       - name: conversion_purchases
         description: The total number of purchases attributed to an ad for the day of the record.
-      - name: _fivetran_synced
-        description: "{{ doc('_fivetran_synced') }}"
