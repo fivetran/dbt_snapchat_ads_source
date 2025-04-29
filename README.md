@@ -95,9 +95,9 @@ vars:
     snapchat_ads__campaign_hourly_report_passthrough_metrics:
       - name: "unique_string_field"
         alias: "field_id"
-    snapchat_ads__campaign_daily_country_report_passthrough_metrics:
+    snapchat_ads__campaign_daily_country_report_passthrough_metrics: # from `campaign_geo_country_daily_report`
       - name: "new_measure_country_report"
-    snapchat_ads__campaign_daily_region_report_passthrough_metrics:
+    snapchat_ads__campaign_daily_region_report_passthrough_metrics: # from `campaign_geo_region_daily_report`
       - name: "new_measure_region_report"
 ```
 
