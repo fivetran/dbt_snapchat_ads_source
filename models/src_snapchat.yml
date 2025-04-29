@@ -276,6 +276,8 @@ sources:
       - name: campaign_geo_country_daily_report
         identifier: "{{ var('snapchat_ads_campaign_geo_country_daily_report_identifier', 'campaign_geo_country_daily_report') }}"
         description: Each record represents a daily performance summary per country for each campaign.
+        config:
+          enabled: "{{ var('ad_reporting__snapchat_ads_enabled', True) and var('snapchat_ads__using_campaign_country_report', True) }}"
         columns:
           - name: campaign_id
             description: ID of campaign
@@ -323,6 +325,8 @@ sources:
       - name: campaign_geo_region_daily_report
         identifier: "{{ var('snapchat_ads_campaign_geo_region_daily_report_identifier', 'campaign_geo_region_daily_report') }}"
         description: Each record represents a daily performance summary per each region for each campaign.
+        config:
+          enabled: "{{ var('ad_reporting__snapchat_ads_enabled', True) and var('snapchat_ads__using_campaign_region_report', True) }}"
         columns:
           - name: campaign_id
             description: ID of campaign
