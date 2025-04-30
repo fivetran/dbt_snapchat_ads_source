@@ -354,7 +354,7 @@ sources:
           - name: attachment_total_view_time_millis
             description: Total time Snapchatters spent on the attachment (HH:MM:SS)
           - name: attachment_view_completion
-            description: The number of times your Long Form Video was viewed to completion (97% )
+            description: The number of times your Long Form Video was viewed to completion (97%)
           - name: quartile_1
             description: The number of times your video was viewed to 25% 
           - name: quartile_2
@@ -427,7 +427,7 @@ sources:
           - name: attachment_total_view_time_millis
             description: Total time Snapchatters spent on the attachment (HH:MM:SS)
           - name: attachment_view_completion
-            description: The number of times your Long Form Video was viewed to completion (97% )
+            description: The number of times your Long Form Video was viewed to completion (97%)
           - name: quartile_1
             description: The number of times your video was viewed to 25% 
           - name: quartile_2
