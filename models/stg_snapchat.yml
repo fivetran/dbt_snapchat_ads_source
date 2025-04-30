@@ -185,33 +185,33 @@ models:
       - name: attachment_view_completion
         description: The number of times your Long Form Video was viewed to completion (97% )
       - name: quartile_1
-        description: The number of times your video ad was viewed to 25% 
+        description: The number of times your video was viewed to 25% 
       - name: quartile_2
-        description: The number of times your video ad was viewed to 50% 
+        description: The number of times your video was viewed to 50% 
       - name: quartile_3
-        description: The number of times your video ad was viewed to 75% 
+        description: The number of times your video was viewed to 75% 
       - name: saves
         description: Number of times components of the ad squad were saved to Memories
       - name: shares
         description: Number of times components of the ad squad were shared in a Chat or Story
       - name: screen_time
-        description: The number of seconds spent watching your ad across all paid impressions. Screen time starts recording as soon as the media is fully rendered on the device and the autoplay video starts
+        description: The number of seconds spent watching your ad squad across all paid impressions. Screen time starts recording as soon as the media is fully rendered on the device and the autoplay video starts
       - name: video_views
         description: The number of times your video was watched at least 2 seconds or swiped up, whichever comes first
       - name: view_completion
         description: The number of times your video ad was viewed to completion (97% )
       - name: view_time
-        description: The number of seconds spent watching your ad across all users reached.
+        description: The number of seconds spent watching your ad squad across all users reached.
       - name: impressions
-        description: The number of impressions for an ad in the hour of the record.
+        description: The number of impressions for an ad squad in the hour of the record.
       - name: spend
-        description: The amount of spend for an ad in the hour of the record.
+        description: The amount of spend for an ad squad in the hour of the record.
       - name: swipes
-        description: The number of swipes for an ad in the hour of the record. Swipes are when your ad was swiped up on or the CTA was tapped to view the attachment below.
+        description: The number of swipes for an ad squad in the hour of the record. Swipes are when your ad was swiped up on or the CTA was tapped to view the attachment below.
       - name: conversion_purchases
-        description: The total number of purchases attributed to an ad for the day of the record.
+        description: The total number of purchases attributed to an ad squad for the day of the record.
       - name: conversion_purchases_value
-        description: The total value of purchases attributed to an ad in the hour of the record (in Ad Account's currency, converted from microcurrency).
+        description: The total value of purchases attributed to an ad squad in the hour of the record (in Ad Account's currency, converted from microcurrency).
 
   - name: stg_snapchat_ads__campaign_history
     description: Each record in this table represents a historic version of a campaign in Snapchat.
@@ -285,33 +285,33 @@ models:
       - name: attachment_view_completion
         description: The number of times your Long Form Video was viewed to completion (97% )
       - name: quartile_1
-        description: The number of times your video ad was viewed to 25% 
+        description: The number of times your video was viewed to 25% 
       - name: quartile_2
-        description: The number of times your video ad was viewed to 50% 
+        description: The number of times your video was viewed to 50% 
       - name: quartile_3
-        description: The number of times your video ad was viewed to 75% 
+        description: The number of times your video was viewed to 75% 
       - name: saves
         description: Number of times components of the campaign were saved to Memories
       - name: shares
         description: Number of times components of the campaign were shared in a Chat or Story
       - name: screen_time
-        description: The number of seconds spent watching your ad across all paid impressions. Screen time starts recording as soon as the media is fully rendered on the device and the autoplay video starts
+        description: The number of seconds spent watching your campaign across all paid impressions. Screen time starts recording as soon as the media is fully rendered on the device and the autoplay video starts
       - name: video_views
         description: The number of times your video was watched at least 2 seconds or swiped up, whichever comes first
       - name: view_completion
-        description: The number of times your video ad was viewed to completion (97% )
+        description: The number of times your video was viewed to completion (97% )
       - name: view_time
-        description: The number of seconds spent watching your ad across all users reached.
+        description: The number of seconds spent watching your campaign across all users reached.
       - name: impressions
-        description: The number of impressions for an ad in the hour of the record.
+        description: The number of impressions for a campaign in the hour of the record.
       - name: spend
-        description: The amount of spend for an ad in the hour of the record.
+        description: The amount of spend for a campaign in the hour of the record.
       - name: swipes
-        description: The number of swipes for an ad in the hour of the record. Swipes are when your ad was swiped up on or the CTA was tapped to view the attachment below.
+        description: The number of swipes for a campaign in the hour of the record. Swipes are when your ad was swiped up on or the CTA was tapped to view the attachment below.
       - name: conversion_purchases
-        description: The total number of purchases attributed to an ad for the day of the record.
+        description: The total number of purchases attributed to a campaign for the day of the record.
       - name: conversion_purchases_value
-        description: The total value of purchases attributed to an ad in the hour of the record (in Ad Account's currency, converted from microcurrency).
+        description: The total value of purchases attributed to a campaign in the hour of the record (in Ad Account's currency, converted from microcurrency).
 
   - name: stg_snapchat_ads__creative_history
     description: Each record in this table represents a historic version of a creative in Snapchat.
@@ -405,33 +405,33 @@ models:
       - name: attachment_view_completion
         description: The number of times your Long Form Video was viewed to completion (97%)
       - name: quartile_1
-        description: The number of times your video ad was viewed to 25% 
+        description: The number of times your video was viewed to 25% 
       - name: quartile_2
-        description: The number of times your video ad was viewed to 50% 
+        description: The number of times your video was viewed to 50% 
       - name: quartile_3
-        description: The number of times your video ad was viewed to 75% 
+        description: The number of times your video was viewed to 75% 
       - name: saves
         description: Number of times components of the campaign were saved to Memories
       - name: shares
         description: Number of times components of the campaign were shared in a Chat or Story
       - name: screen_time
-        description: The number of seconds spent watching your ad across all paid impressions. Screen time starts recording as soon as the media is fully rendered on the device and the autoplay video starts
+        description: The number of seconds spent watching your campaign across all paid impressions. Screen time starts recording as soon as the media is fully rendered on the device and the autoplay video starts
       - name: video_views
         description: The number of times your video was watched at least 2 seconds or swiped up, whichever comes first
       - name: view_completion
-        description: The number of times your video ad was viewed to completion (97% )
+        description: The number of times your video was viewed to completion (97% )
       - name: view_time
-        description: The number of seconds spent watching your ad across all users reached.
+        description: The number of seconds spent watching your campaign across all users reached.
       - name: impressions
-        description: The number of impressions for an ad.
+        description: The number of impressions for a campaign.
       - name: spend
-        description: The amount of spend for an ad.
+        description: The amount of spend for a campaign.
       - name: swipes
-        description: The number of swipes for an ad. Swipes are when your ad was swiped up on or the CTA was tapped to view the attachment below.
+        description: The number of swipes for a campaign. Swipes are when your ad was swiped up on or the CTA was tapped to view the attachment below.
       - name: conversion_purchases_value
-        description: The total value of purchases attributed to an ad.
+        description: The total value of purchases attributed to a campaign.
       - name: conversion_purchases
-        description: The total number of purchases attributed to an ad for the day of the record.
+        description: The total number of purchases attributed to a campaign for the day of the record.
 
 
   - name: stg_snapchat_ads__campaign_geo_region_daily_report
@@ -469,30 +469,30 @@ models:
       - name: attachment_view_completion
         description: The number of times your Long Form Video was viewed to completion (97% )
       - name: quartile_1
-        description: The number of times your video ad was viewed to 25% 
+        description: The number of times your video was viewed to 25% 
       - name: quartile_2
-        description: The number of times your video ad was viewed to 50% 
+        description: The number of times your video was viewed to 50% 
       - name: quartile_3
-        description: The number of times your video ad was viewed to 75% 
+        description: The number of times your video was viewed to 75% 
       - name: saves
         description: Number of times components of the campaign were saved to Memories
       - name: shares
         description: Number of times components of the campaign were shared in a Chat or Story
       - name: screen_time
-        description: The number of seconds spent watching your ad across all paid impressions. Screen time starts recording as soon as the media is fully rendered on the device and the autoplay video starts
+        description: The number of seconds spent watching your campaign across all paid impressions. Screen time starts recording as soon as the media is fully rendered on the device and the autoplay video starts
       - name: video_views
         description: The number of times your video was watched at least 2 seconds or swiped up, whichever comes first
       - name: view_completion
-        description: The number of times your video ad was viewed to completion (97% )
+        description: The number of times your video was viewed to completion (97% )
       - name: view_time
-        description: The number of seconds spent watching your ad across all users reached.
+        description: The number of seconds spent watching your campaign across all users reached.
       - name: impressions
-        description: The number of impressions for an ad.
+        description: The number of impressions for a campaign.
       - name: spend
-        description: The amount of spend for an ad.
+        description: The amount of spend for a campaign.
       - name: swipes
-        description: The number of swipes for an ad. Swipes are when your ad was swiped up on or the CTA was tapped to view the attachment below.
+        description: The number of swipes for a campaign. Swipes are when your ad was swiped up on or the CTA was tapped to view the attachment below.
       - name: conversion_purchases_value
-        description: The total value of purchases attributed to an ad.
+        description: The total value of purchases attributed to a campaign.
       - name: conversion_purchases
-        description: The total number of purchases attributed to an ad for the day of the record.
+        description: The total number of purchases attributed to a campaign for the day of the record.
